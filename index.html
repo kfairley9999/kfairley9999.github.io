@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kevin Fairley — AI Researcher, Agentic Systems</title>
+  <meta name="description" content="Kevin Fairley: AI researcher focused on making LLM agents measurable and dependable. Open-source agents, multi-agent systems, eval harnesses, and guardrails, with live demos.">
+  <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="Kevin Fairley — AI Researcher, Agentic Systems">
+  <meta property="og:description" content="Open-source LLM agents, multi-agent systems, eval regression gates, and code-enforced guardrails, with live demos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kfairy9999.github.io/">
+  <link rel="canonical" href="https://kfairy9999.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Kevin Fairley","jobTitle":"AI Researcher — Agentic Systems, Evaluation & Reliability","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA"},"url":"https://kfairy9999.github.io/","sameAs":["https://github.com/kfairy9999","https://www.linkedin.com/in/kevin-fairley-94330b42a/"]}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar" id="top">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Kevin Fairley, home"><span class="mono">KF</span></a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li class="hide-sm"><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Open to AI Research Engineer / Applied AI roles · LA or remote</p>
+      <h1 id="hero-title">Kevin Fairley</h1>
+      <p class="role">AI Researcher — Agentic Systems, Evaluation &amp; Reliability</p>
+      <p class="pitch">I make LLM agents measurable and dependable: tool-calling agents, multi-agent systems, eval harnesses, regression gates, and guardrails enforced in code, not prompts. Published with reproducible results and honest failure analyses.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See live projects</a>
+        <a class="btn" href="assets/Kevin_Fairley_Resume.pdf" download>Download résumé (PDF)</a>
+      </div>
+      <ul class="hero-meta" aria-label="Quick facts">
+        <li>Los Angeles, CA</li>
+        <li>U.S. Marine Corps veteran</li>
+        <li>English &amp; Spanish</li>
+      </ul>
+      <ul class="stats" aria-label="Highlights">
+        <li><strong>14/15</strong><span>mini-agent eval on a hosted Groq model</span></li>
+        <li><strong>905,180</strong><span>tokens at exact GPT-2 parity with tiktoken</span></li>
+        <li><strong>7</strong><span>live apps deployed on Cloudflare Workers</span></li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section wrap" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <p class="kicker">01 — Research &amp; projects</p>
+        <h2 id="projects-title">Featured work</h2>
+        <p class="lede">Open source on GitHub. Where there's a live demo, it runs without an API key and labels any demo or synthetic data.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><span class="tag">Multi-agent</span><span class="live" title="Live demo available">Live</span></div>
+          <h3>agent-crew</h3>
+          <p class="sub">Multi-agent research desk</p>
+          <p>Planner, researcher, writer, and critic agents share a blackboard; you watch each handoff stream in live. The controls live outside the model: a deterministic check rejects citations to sources that were never retrieved, the critic loop is capped, and a token/dollar budget is checked before and after every model call.</p>
+          <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>Cloudflare Workers</li><li>React</li><li>Hono</li><li>SSE</li></ul>
+          <div class="links">
+            <a class="btn sm primary" href="https://agent-crew.kfairley9999.workers.dev" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+            <a class="btn sm" href="https://github.com/kfairy9999/agent-crew" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">Evals</span><span class="live" title="Live demo available">Live</span></div>
+          <h3>llm-watch</h3>
+          <p class="sub">LLM call ledger &amp; eval regression gate</p>
+          <p>Logs every LLM call's tokens, latency, and cost to SQLite, then gates model swaps in CI with an eval suite (regex, JSON-schema, and LLM-judge scorers), a paired bootstrap 95% CI, and pass-to-fail flip detection. In the demo suite it blocks a cheaper model that causes six pass-to-fail flips.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>React</li><li>SQLite</li></ul>
+          <div class="links">
+            <a class="btn sm primary" href="https://llm-watch.kfairley9999.workers.dev" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+            <a class="btn sm" href="https://github.com/kfairy9999/llm-watch" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">Agents</span></div>
+          <h3>mini-agent</h3>
+          <p class="sub">Tool-calling agent with self-check &amp; eval harness</p>
+          <p>A provider-agnostic agent loop (OpenAI-compatible: Groq, Gemini, OpenAI) with calculator, sandboxed Python, and web-search tools, a step budget, a required self-check, and rate-limit-aware retries. Scored 14/15 (93.3%) on a 15-task eval with automated checkers; the published failure analysis shows the self-check accepting an off-by-one answer, motivating a re-execution verifier.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Python</li><li>pytest</li><li>Groq</li><li>Gemini</li></ul>
+          <div class="links">
+            <a class="btn sm" href="https://github.com/kfairy9999/mini-agent" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">RAG</span><span class="live" title="Live demo available">Live</span></div>
+          <h3>Personal Knowledge Engine</h3>
+          <p class="sub">Retrieval-augmented generation over your own files</p>
+          <p>Chunks uploaded PDFs and notes in the browser, embeds them with Gemini, and streams a Grok answer that cites only the passages it actually retrieved. API keys stay on the server; without keys, it falls back to a clearly labeled keyword-retrieval demo mode.</p>
+          <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>React</li><li>Vite</li><li>Cloudflare Workers</li><li>Gemini embeddings</li><li>Grok</li></ul>
+          <div class="links">
+            <a class="btn sm primary" href="https://personal-knowledge-engine.kfairley9999.workers.dev" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+            <a class="btn sm" href="https://github.com/kfairy9999/Retrieval-Augmented-Generation" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">Guardrails</span></div>
+          <h3>hermes-phone-agent</h3>
+          <p class="sub">Guardrails for an open-source agent's phone/SMS skills</p>
+          <p>Wraps Nous Research's Hermes Agent telephony skill with guardrails enforced in code, not prompts: an allowlist, confirmation, call/text/spend caps, quiet hours, and an append-only audit log. Providers are mock-by-default, so it's safe to run.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Python</li><li>Hermes Agent</li><li>Twilio / Bland / Vapi adapters</li></ul>
+          <div class="links">
+            <a class="btn sm" href="https://github.com/kfairy9999/hermes-phone-agent" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">ML systems</span></div>
+          <h3>fast-tokenizer</h3>
+          <p class="sub">Byte-level BPE tokenizer</p>
+          <p>Rust tokenizer with Python bindings. Exact GPT-2 token parity with tiktoken on 905,180 tokens; about 2.5× tiktoken's single-thread speed from Python, and 155.7 MB/s with 4 threads.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Rust</li><li>Python</li><li>PyO3</li><li>rayon</li></ul>
+          <div class="links">
+            <a class="btn sm" href="https://github.com/kfairy9999/fast-tokenizer" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="subhead">More shipped apps</h3>
+      <ul class="mini-cards">
+        <li class="mini">
+          <div><h4>Turf Preview</h4><p>Phone-first generative-AI app: upload a yard photo, pick a turf style, get a photorealistic install mockup with a before/after slider. Photos are not stored. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
+          <div class="links"><a class="btn sm" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span></a><a class="btn sm" href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li class="mini">
+          <div><h4>Light Preview</h4><p>Same pipeline for holiday lighting: a dusk mockup of a house with Christmas lights, before/after slider, Save, and Share. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
+          <div class="links"><a class="btn sm" href="https://light-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span></a></div>
+        </li>
+        <li class="mini">
+          <div><h4>Pulse CRM</h4><p>Single-owner CRM: contacts, pipeline, tasks, and reports. The demo runs the real CRM handlers in your browser on fictional sample data.</p><p class="stack-inline">JavaScript · Cloudflare Workers · D1</p></div>
+          <div class="links"><a class="btn sm" href="https://pulse-crm.kfairley9999.workers.dev/demo" target="_blank" rel="noopener">Demo <span aria-hidden="true">↗</span></a><a class="btn sm" href="https://github.com/kfairy9999/pulse-crm" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li class="mini">
+          <div><h4>EquiFlow</h4><p>Stock-tape dashboard on a simulated, clearly labeled price feed: SMA-20, drift alerts, and an optional server-side Grok read. Not investment advice.</p><p class="stack-inline">TypeScript · Cloudflare Workers</p></div>
+          <div class="links"><a class="btn sm" href="https://equiflow.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span></a><a class="btn sm" href="https://github.com/kfairy9999/EquiFlow-Stock-App" target="_blank" rel="noopener">Code</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <p class="kicker">02 — About</p>
+        <h2 id="about-title">Reliable agents, measured honestly</h2>
+      </div>
+      <div class="about">
+        <p>I'm an AI researcher in Los Angeles focused on the unglamorous half of agentic AI: making agents <em>measurable</em> and <em>dependable</em>. I build open-source tool-calling agents and multi-agent systems, then wrap them with eval harnesses, regression gates, and code-enforced guardrails, and I publish the results, including the failures.</p>
+        <p>I design and direct my projects and build them with AI coding agents: I set the requirements, test against real models and real data, and report limits alongside results.</p>
+        <p>Before AI, I served in the U.S. Marine Corps and worked in server management, logistics, and data workflows. That background shows up in how I build: clear controls, audit trails, and systems that fail safely.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section wrap" id="skills" aria-labelledby="skills-title">
+      <div class="section-head">
+        <p class="kicker">03 — Skills</p>
+        <h2 id="skills-title">Toolkit</h2>
+      </div>
+      <div class="skills">
+        <div class="skill-group"><h3>AI / ML</h3><ul class="chips"><li>LLM agents</li><li>Tool calling</li><li>Multi-agent orchestration</li><li>Evals &amp; regression gates</li><li>LLM-as-judge</li><li>Guardrails</li><li>Audit logs</li><li>Token/cost budgets</li><li>BPE tokenization</li></ul></div>
+        <div class="skill-group"><h3>Languages</h3><ul class="chips"><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Rust</li><li>HTML/CSS</li><li>English &amp; Spanish</li></ul></div>
+        <div class="skill-group"><h3>Tools</h3><ul class="chips"><li>FastAPI</li><li>React</li><li>Cloudflare Workers</li><li>SQLite</li><li>PyO3</li><li>pytest</li><li>Playwright</li><li>Docker</li><li>GitHub Actions</li><li>Git</li></ul></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section wrap" id="experience" aria-labelledby="exp-title">
+      <div class="section-head">
+        <p class="kicker">04 — Experience &amp; education</p>
+        <h2 id="exp-title">Background</h2>
+      </div>
+      <ol class="timeline">
+        <li>
+          <div class="when">2024 – Present</div>
+          <div class="what"><h3>Data &amp; Workflow Specialist</h3><p class="org">Solvis Corp. · Commerce, CA</p><p>Validate and integrate multi-source data, automate spreadsheet workflows, and build visualizations for leadership.</p></div>
+        </li>
+        <li>
+          <div class="when">2015 – 2019</div>
+          <div class="what"><h3>Heavy Equipment Manager / Logistics Specialist</h3><p class="org">U.S. Artificial Grass · Los Angeles, CA</p><p>Managed inventory, freight, and equipment with computer-aided inventory, GPS, and diagnostic tools, including a military installation project.</p></div>
+        </li>
+        <li>
+          <div class="when">2014 – 2017</div>
+          <div class="what"><h3>IT Specialist / Server Management</h3><p class="org">Kesem Technology · Washington, DC</p><p>Maintained server infrastructure for high availability and security compliance: patching, network health monitoring, and OSI-model root-cause troubleshooting.</p></div>
+        </li>
+        <li>
+          <div class="when">2010 – 2014</div>
+          <div class="what"><h3>Heavy Equipment Operator, Lance Corporal (E-3)</h3><p class="org">United States Marine Corps</p><p>Maintained readiness of equipment, communications gear, and vehicles under strict security protocols.</p></div>
+        </li>
+      </ol>
+      <div class="edu">
+        <h3>Certifications &amp; education</h3>
+        <ul>
+          <li><strong>CompTIA A+</strong> — earned 2014 · The Hope Project, Washington, DC</li>
+          <li><strong>Job Readiness &amp; Professional Development</strong> — Chrysalis, Los Angeles, CA · 2024</li>
+          <li><strong>High School Diploma</strong> — James Irwin Charter, Colorado Springs, CO</li>
+          <li><strong>Volunteer:</strong> Hospital Volunteer, Good Samaritan Hospital, Los Angeles, CA · 2025</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESUME + CONTACT -->
+    <section class="section wrap" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card">
+        <p class="kicker">05 — Contact</p>
+        <h2 id="contact-title">Let's build reliable agents.</h2>
+        <p class="lede">Seeking AI Research Engineer / Applied AI roles in Los Angeles or remote.</p>
+        <div class="contact-links">
+          <a class="btn primary" href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/kevin-fairley-94330b42a/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="assets/Kevin_Fairley_Resume.pdf" download>Résumé (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <p>© <span id="year">2026</span> Kevin Fairley · Los Angeles, CA</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

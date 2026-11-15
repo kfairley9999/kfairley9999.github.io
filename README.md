@@ -33,6 +33,8 @@ Every fact on the page comes from my résumé or my GitHub repositories.
 | `styles.css` | Theme tokens (light and dark) and layout |
 | `script.js` | Theme toggle and footer year |
 | `assets/Kevin_Fairley_Resume.pdf` | Résumé download |
+| `assets/kevin-fairley.webp` / `.jpg` | Profile photo, 600×600 (WebP with JPG fallback; JPG is also the link-preview image) |
+| `assets/kevin-fairley-128.webp` / `.jpg` | Small photo for the nav bar |
 | `assets/favicon.svg` | Favicon |
 
 ## Run locally

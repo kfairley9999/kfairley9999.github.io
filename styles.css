@@ -179,6 +179,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stack li, .chips li { font-size: 13px; font-weight: 500; padding: 5px 11px; border-radius: 999px; background: var(--chip); color: var(--ink-2); }
 .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 10px; }
 
+/* Full-width featured card with a product shot (fills the last row in 2- and 3-column layouts) */
+.card.feature { grid-column: 1 / -1; display: grid; gap: 22px; }
+.feature-body { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.feature-shot { display: block; order: -1; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: #1c1612; box-shadow: var(--shadow); aspect-ratio: 16 / 10; }
+.feature-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform .6s var(--ease); }
+@media (hover: hover) { .card.feature:hover .feature-shot img { transform: scale(1.025); } }
+@media (min-width: 740px) {
+  .card.feature { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: 32px; padding: 30px; }
+  .feature-shot { order: 0; }
+}
+
 .more { margin-top: 56px; }
 .subhead { font-size: 1.5rem; margin-bottom: 18px; letter-spacing: -0.02em; }
 .mini-list { display: grid; grid-template-columns: 1fr; gap: 14px; }

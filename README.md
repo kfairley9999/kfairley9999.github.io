@@ -19,10 +19,12 @@ Every fact on the page comes from my résumé or my GitHub repositories.
 
 ## How it's built
 
-- Plain HTML, CSS, and a few lines of JavaScript. No framework, no build step, no trackers, no external fonts.
-- Mobile-first layout, tested at 390 px wide, with no horizontal scroll.
-- Follows the system dark/light setting, with a manual toggle that's remembered in `localStorage`.
-- Accessibility: semantic landmarks, a skip link, visible focus rings, 40–44 px touch targets, and `prefers-reduced-motion` support.
+- Plain HTML, CSS, and a few lines of JavaScript. No framework, no build step, no trackers, no third-party requests.
+- **Design:** a warm, editorial look. Cream and off-white surfaces, terracotta and amber accents, deep warm-charcoal text, and a warm brown dark mode (follows the system setting, with a remembered toggle).
+- **Type:** Fraunces (headings) and Inter (body), self-hosted as variable WOFF2 with `font-display: swap`, preloaded, with metric-adjusted fallbacks to avoid layout shift.
+- **Motion:** gentle hero entrance, fade-in on scroll, and hover lift on cards and buttons. All of it is disabled under `prefers-reduced-motion`, and content stays visible without JavaScript.
+- Mobile-first, checked at 390 px (no horizontal scroll) and at desktop widths. Text colours meet WCAG AA contrast in both themes.
+- Accessibility: semantic landmarks, a skip link, visible focus rings, 42–48 px touch targets, and descriptive link text for screen readers.
 - Hosted free on GitHub Pages from the `main` branch root (`.nojekyll` disables Jekyll processing).
 
 ## Files
@@ -35,6 +37,7 @@ Every fact on the page comes from my résumé or my GitHub repositories.
 | `assets/Kevin_Fairley_Resume.pdf` | Résumé download |
 | `assets/kevin-fairley.webp` / `.jpg` | Profile photo, 600×600 (WebP with JPG fallback; JPG is also the link-preview image) |
 | `assets/kevin-fairley-128.webp` / `.jpg` | Small photo for the nav bar |
+| `assets/fonts/` | Fraunces and Inter (SIL Open Font License 1.1), Latin subset |
 | `assets/favicon.svg` | Favicon |
 
 ## Run locally

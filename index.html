@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Kevin Fairley — AI Researcher, Agentic Systems</title>
   <meta name="description" content="Kevin Fairley: AI researcher focused on making LLM agents measurable and dependable. Open-source agents, multi-agent systems, eval harnesses, and guardrails, with live demos.">
-  <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1612" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
   <meta property="og:title" content="Kevin Fairley — AI Researcher, Agentic Systems">
   <meta property="og:description" content="Open-source LLM agents, multi-agent systems, eval regression gates, and code-enforced guardrails, with live demos.">
   <meta property="og:type" content="website">
@@ -22,12 +22,17 @@
   <meta name="twitter:image:alt" content="Kevin Fairley">
   <link rel="canonical" href="https://kfairy9999.github.io/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/kevin-fairley.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script>
     (function () {
+      var d = document.documentElement;
+      d.className += ' js';
       try {
         var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
       } catch (e) {}
     })();
   </script>
@@ -40,11 +45,14 @@
 
   <header class="topbar" id="top">
     <nav class="nav wrap" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Kevin Fairley, home"><picture><source srcset="assets/kevin-fairley-128.webp" type="image/webp"><img class="brand-photo" src="assets/kevin-fairley-128.jpg" alt="" width="34" height="34" decoding="async"></picture></a>
+      <a class="brand" href="#top">
+        <picture><source srcset="assets/kevin-fairley-128.webp" type="image/webp"><img class="brand-photo" src="assets/kevin-fairley-128.jpg" alt="" width="36" height="36" decoding="async"></picture>
+        <span class="brand-name">Kevin Fairley</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#work">Work</a></li>
         <li class="hide-sm"><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li class="hide-sm"><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme">
@@ -56,182 +64,200 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Open to AI Research Engineer / Applied AI roles · LA or remote</p>
-      <picture class="hero-photo">
-        <source srcset="assets/kevin-fairley.webp" type="image/webp">
-        <img src="assets/kevin-fairley.jpg" alt="Kevin Fairley" width="600" height="600" fetchpriority="high" decoding="async">
-      </picture>
-      <h1 id="hero-title">Kevin Fairley</h1>
-      <p class="role">AI Researcher — Agentic Systems, Evaluation &amp; Reliability</p>
-      <p class="pitch">I make LLM agents measurable and dependable: tool-calling agents, multi-agent systems, eval harnesses, regression gates, and guardrails enforced in code, not prompts. Published with reproducible results and honest failure analyses.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">See live projects</a>
-        <a class="btn" href="assets/Kevin_Fairley_Resume.pdf" download>Download résumé (PDF)</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-photo-wrap">
+          <picture class="hero-photo">
+            <source srcset="assets/kevin-fairley.webp" type="image/webp">
+            <img src="assets/kevin-fairley.jpg" alt="Kevin Fairley" width="600" height="600" fetchpriority="high" decoding="async">
+          </picture>
+        </div>
+        <div class="hero-copy">
+          <p class="status"><span class="dot" aria-hidden="true"></span>Open to AI Research Engineer / Applied AI roles · LA or remote</p>
+          <h1 id="hero-title"><span class="hello">Hi, I'm</span> Kevin Fairley.</h1>
+          <p class="role">AI Researcher — Agentic Systems, Evaluation &amp; Reliability</p>
+          <p class="pitch">I make LLM agents <em>measurable</em> and <em>dependable</em>: tool-calling agents, multi-agent systems, eval harnesses, regression gates, and guardrails enforced in code, not prompts. Published with reproducible results and honest failure analyses.</p>
+          <div class="cta">
+            <a class="btn primary" href="#work">View my work</a>
+            <a class="btn secondary" href="assets/Kevin_Fairley_Resume.pdf" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+              Download résumé
+            </a>
+            <a class="btn ghost" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="hero-meta" aria-label="Quick facts">
+            <li>Los Angeles, CA</li>
+            <li>U.S. Marine Corps veteran</li>
+            <li>English &amp; Spanish</li>
+          </ul>
+        </div>
       </div>
-      <ul class="hero-meta" aria-label="Quick facts">
-        <li>Los Angeles, CA</li>
-        <li>U.S. Marine Corps veteran</li>
-        <li>English &amp; Spanish</li>
-      </ul>
-      <ul class="stats" aria-label="Highlights">
-        <li><strong>14/15</strong><span>mini-agent eval on a hosted Groq model</span></li>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="wrap highlights reveal" aria-label="Highlights">
+      <ul class="stats">
+        <li><strong>14/15</strong><span>mini-agent eval score on a hosted Groq model</span></li>
         <li><strong>905,180</strong><span>tokens at exact GPT-2 parity with tiktoken</span></li>
         <li><strong>7</strong><span>live apps deployed on Cloudflare Workers</span></li>
       </ul>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section wrap" id="projects" aria-labelledby="projects-title">
-      <div class="section-head">
-        <p class="kicker">01 — Research &amp; projects</p>
-        <h2 id="projects-title">Featured work</h2>
-        <p class="lede">Open source on GitHub. Where there's a live demo, it runs without an API key and labels any demo or synthetic data.</p>
-      </div>
+    <!-- WORK -->
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <header class="section-head reveal">
+        <p class="kicker">Selected work</p>
+        <h2 id="work-title">Research &amp; projects</h2>
+        <p class="lede">All open source on GitHub. Live demos run without an API key and clearly label any demo or synthetic data.</p>
+      </header>
 
       <div class="cards">
-        <article class="card">
-          <div class="card-top"><span class="tag">Multi-agent</span><span class="live" title="Live demo available">Live</span></div>
+        <article class="card reveal">
+          <div class="card-top"><span class="tag">Multi-agent</span><span class="live">Live demo</span></div>
           <h3>agent-crew</h3>
           <p class="sub">Multi-agent research desk</p>
-          <p>Planner, researcher, writer, and critic agents share a blackboard; you watch each handoff stream in live. The controls live outside the model: a deterministic check rejects citations to sources that were never retrieved, the critic loop is capped, and a token/dollar budget is checked before and after every model call.</p>
+          <p class="desc">Planner, researcher, writer, and critic agents share a blackboard; you watch each handoff stream in live. The controls live outside the model: a deterministic check rejects citations to sources that were never retrieved, the critic loop is capped, and a token/dollar budget is checked before and after every model call.</p>
           <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>Cloudflare Workers</li><li>React</li><li>Hono</li><li>SSE</li></ul>
           <div class="links">
-            <a class="btn sm primary" href="https://agent-crew.kfairley9999.workers.dev" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
-            <a class="btn sm" href="https://github.com/kfairy9999/agent-crew" target="_blank" rel="noopener">Code</a>
+            <a class="btn sm primary" href="https://agent-crew.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (agent-crew, opens in a new tab)</span></a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/agent-crew" target="_blank" rel="noopener">Code<span class="sr"> for agent-crew</span></a>
           </div>
         </article>
 
-        <article class="card">
-          <div class="card-top"><span class="tag">Evals</span><span class="live" title="Live demo available">Live</span></div>
+        <article class="card reveal">
+          <div class="card-top"><span class="tag">Evals</span><span class="live">Live demo</span></div>
           <h3>llm-watch</h3>
           <p class="sub">LLM call ledger &amp; eval regression gate</p>
-          <p>Logs every LLM call's tokens, latency, and cost to SQLite, then gates model swaps in CI with an eval suite (regex, JSON-schema, and LLM-judge scorers), a paired bootstrap 95% CI, and pass-to-fail flip detection. In the demo suite it blocks a cheaper model that causes six pass-to-fail flips.</p>
+          <p class="desc">Logs every LLM call's tokens, latency, and cost to SQLite, then gates model swaps in CI with an eval suite (regex, JSON-schema, and LLM-judge scorers), a paired bootstrap 95% CI, and pass-to-fail flip detection. In the demo suite it blocks a cheaper model that causes six pass-to-fail flips.</p>
           <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>React</li><li>SQLite</li></ul>
           <div class="links">
-            <a class="btn sm primary" href="https://llm-watch.kfairley9999.workers.dev" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
-            <a class="btn sm" href="https://github.com/kfairy9999/llm-watch" target="_blank" rel="noopener">Code</a>
+            <a class="btn sm primary" href="https://llm-watch.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (llm-watch, opens in a new tab)</span></a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/llm-watch" target="_blank" rel="noopener">Code<span class="sr"> for llm-watch</span></a>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card reveal">
           <div class="card-top"><span class="tag">Agents</span></div>
           <h3>mini-agent</h3>
           <p class="sub">Tool-calling agent with self-check &amp; eval harness</p>
-          <p>A provider-agnostic agent loop (OpenAI-compatible: Groq, Gemini, OpenAI) with calculator, sandboxed Python, and web-search tools, a step budget, a required self-check, and rate-limit-aware retries. Scored 14/15 (93.3%) on a 15-task eval with automated checkers; the published failure analysis shows the self-check accepting an off-by-one answer, motivating a re-execution verifier.</p>
+          <p class="desc">A provider-agnostic agent loop (OpenAI-compatible: Groq, Gemini, OpenAI) with calculator, sandboxed Python, and web-search tools, a step budget, a required self-check, and rate-limit-aware retries. Scored 14/15 (93.3%) on a 15-task eval with automated checkers; the published failure analysis shows the self-check accepting an off-by-one answer, motivating a re-execution verifier.</p>
           <ul class="stack" aria-label="Tech stack"><li>Python</li><li>pytest</li><li>Groq</li><li>Gemini</li></ul>
           <div class="links">
-            <a class="btn sm" href="https://github.com/kfairy9999/mini-agent" target="_blank" rel="noopener">Code</a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/mini-agent" target="_blank" rel="noopener">Code<span class="sr"> for mini-agent</span></a>
           </div>
         </article>
 
-        <article class="card">
-          <div class="card-top"><span class="tag">RAG</span><span class="live" title="Live demo available">Live</span></div>
+        <article class="card reveal">
+          <div class="card-top"><span class="tag">RAG</span><span class="live">Live demo</span></div>
           <h3>Personal Knowledge Engine</h3>
           <p class="sub">Retrieval-augmented generation over your own files</p>
-          <p>Chunks uploaded PDFs and notes in the browser, embeds them with Gemini, and streams a Grok answer that cites only the passages it actually retrieved. API keys stay on the server; without keys, it falls back to a clearly labeled keyword-retrieval demo mode.</p>
+          <p class="desc">Chunks uploaded PDFs and notes in the browser, embeds them with Gemini, and streams a Grok answer that cites only the passages it actually retrieved. API keys stay on the server; without keys, it falls back to a clearly labeled keyword-retrieval demo mode.</p>
           <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>React</li><li>Vite</li><li>Cloudflare Workers</li><li>Gemini embeddings</li><li>Grok</li></ul>
           <div class="links">
-            <a class="btn sm primary" href="https://personal-knowledge-engine.kfairley9999.workers.dev" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
-            <a class="btn sm" href="https://github.com/kfairy9999/Retrieval-Augmented-Generation" target="_blank" rel="noopener">Code</a>
+            <a class="btn sm primary" href="https://personal-knowledge-engine.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (Personal Knowledge Engine, opens in a new tab)</span></a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/Retrieval-Augmented-Generation" target="_blank" rel="noopener">Code<span class="sr"> for Personal Knowledge Engine</span></a>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card reveal">
           <div class="card-top"><span class="tag">Guardrails</span></div>
           <h3>hermes-phone-agent</h3>
           <p class="sub">Guardrails for an open-source agent's phone/SMS skills</p>
-          <p>Wraps Nous Research's Hermes Agent telephony skill with guardrails enforced in code, not prompts: an allowlist, confirmation, call/text/spend caps, quiet hours, and an append-only audit log. Providers are mock-by-default, so it's safe to run.</p>
+          <p class="desc">Wraps Nous Research's Hermes Agent telephony skill with guardrails enforced in code, not prompts: an allowlist, confirmation, call/text/spend caps, quiet hours, and an append-only audit log. Providers are mock-by-default, so it's safe to run.</p>
           <ul class="stack" aria-label="Tech stack"><li>Python</li><li>Hermes Agent</li><li>Twilio / Bland / Vapi adapters</li></ul>
           <div class="links">
-            <a class="btn sm" href="https://github.com/kfairy9999/hermes-phone-agent" target="_blank" rel="noopener">Code</a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/hermes-phone-agent" target="_blank" rel="noopener">Code<span class="sr"> for hermes-phone-agent</span></a>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card reveal">
           <div class="card-top"><span class="tag">ML systems</span></div>
           <h3>fast-tokenizer</h3>
           <p class="sub">Byte-level BPE tokenizer</p>
-          <p>Rust tokenizer with Python bindings. Exact GPT-2 token parity with tiktoken on 905,180 tokens; about 2.5× tiktoken's single-thread speed from Python, and 155.7 MB/s with 4 threads.</p>
+          <p class="desc">Rust tokenizer with Python bindings. Exact GPT-2 token parity with tiktoken on 905,180 tokens; about 2.5× tiktoken's single-thread speed from Python, and 155.7 MB/s with 4 threads.</p>
           <ul class="stack" aria-label="Tech stack"><li>Rust</li><li>Python</li><li>PyO3</li><li>rayon</li></ul>
           <div class="links">
-            <a class="btn sm" href="https://github.com/kfairy9999/fast-tokenizer" target="_blank" rel="noopener">Code</a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/fast-tokenizer" target="_blank" rel="noopener">Code<span class="sr"> for fast-tokenizer</span></a>
           </div>
         </article>
       </div>
 
-      <h3 class="subhead">More shipped apps</h3>
-      <ul class="mini-cards">
-        <li class="mini">
-          <div><h4>Turf Preview</h4><p>Phone-first generative-AI app: upload a yard photo, pick a turf style, get a photorealistic install mockup with a before/after slider. Photos are not stored. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
-          <div class="links"><a class="btn sm" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span></a><a class="btn sm" href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Code</a></div>
-        </li>
-        <li class="mini">
-          <div><h4>Light Preview</h4><p>Same pipeline for holiday lighting: a dusk mockup of a house with Christmas lights, before/after slider, Save, and Share. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
-          <div class="links"><a class="btn sm" href="https://light-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span></a></div>
-        </li>
-        <li class="mini">
-          <div><h4>Pulse CRM</h4><p>Single-owner CRM: contacts, pipeline, tasks, and reports. The demo runs the real CRM handlers in your browser on fictional sample data.</p><p class="stack-inline">JavaScript · Cloudflare Workers · D1</p></div>
-          <div class="links"><a class="btn sm" href="https://pulse-crm.kfairley9999.workers.dev/demo" target="_blank" rel="noopener">Demo <span aria-hidden="true">↗</span></a><a class="btn sm" href="https://github.com/kfairy9999/pulse-crm" target="_blank" rel="noopener">Code</a></div>
-        </li>
-        <li class="mini">
-          <div><h4>EquiFlow</h4><p>Stock-tape dashboard on a simulated, clearly labeled price feed: SMA-20, drift alerts, and an optional server-side Grok read. Not investment advice.</p><p class="stack-inline">TypeScript · Cloudflare Workers</p></div>
-          <div class="links"><a class="btn sm" href="https://equiflow.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span></a><a class="btn sm" href="https://github.com/kfairy9999/EquiFlow-Stock-App" target="_blank" rel="noopener">Code</a></div>
-        </li>
-      </ul>
+      <div class="more reveal">
+        <h3 class="subhead">More shipped apps</h3>
+        <ul class="mini-list">
+          <li class="mini">
+            <div class="mini-body"><h4>Turf Preview</h4><p>Phone-first generative-AI app: upload a yard photo, pick a turf style, get a photorealistic install mockup with a before/after slider. Photos are not stored. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
+            <div class="links"><a class="btn sm secondary" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span><span class="sr"> Turf Preview</span></a><a class="btn sm ghost" href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Code<span class="sr"> for Turf Preview</span></a></div>
+          </li>
+          <li class="mini">
+            <div class="mini-body"><h4>Light Preview</h4><p>Same pipeline for holiday lighting: a dusk mockup of a house with Christmas lights, before/after slider, Save, and Share. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
+            <div class="links"><a class="btn sm secondary" href="https://light-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span><span class="sr"> Light Preview</span></a></div>
+          </li>
+          <li class="mini">
+            <div class="mini-body"><h4>Pulse CRM</h4><p>Single-owner CRM: contacts, pipeline, tasks, and reports. The demo runs the real CRM handlers in your browser on fictional sample data.</p><p class="stack-inline">JavaScript · Cloudflare Workers · D1</p></div>
+            <div class="links"><a class="btn sm secondary" href="https://pulse-crm.kfairley9999.workers.dev/demo" target="_blank" rel="noopener">Demo <span aria-hidden="true">↗</span><span class="sr"> Pulse CRM</span></a><a class="btn sm ghost" href="https://github.com/kfairy9999/pulse-crm" target="_blank" rel="noopener">Code<span class="sr"> for Pulse CRM</span></a></div>
+          </li>
+          <li class="mini">
+            <div class="mini-body"><h4>EquiFlow</h4><p>Stock-tape dashboard on a simulated, clearly labeled price feed: SMA-20, drift alerts, and an optional server-side Grok read. Not investment advice.</p><p class="stack-inline">TypeScript · Cloudflare Workers</p></div>
+            <div class="links"><a class="btn sm secondary" href="https://equiflow.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span><span class="sr"> EquiFlow</span></a><a class="btn sm ghost" href="https://github.com/kfairy9999/EquiFlow-Stock-App" target="_blank" rel="noopener">Code<span class="sr"> for EquiFlow</span></a></div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="section wrap" id="about" aria-labelledby="about-title">
-      <div class="section-head">
-        <p class="kicker">02 — About</p>
-        <h2 id="about-title">Reliable agents, measured honestly</h2>
-      </div>
-      <div class="about">
-        <p>I'm an AI researcher in Los Angeles focused on the unglamorous half of agentic AI: making agents <em>measurable</em> and <em>dependable</em>. I build open-source tool-calling agents and multi-agent systems, then wrap them with eval harnesses, regression gates, and code-enforced guardrails, and I publish the results, including the failures.</p>
-        <p>I design and direct my projects and build them with AI coding agents: I set the requirements, test against real models and real data, and report limits alongside results.</p>
-        <p>Before AI, I served in the U.S. Marine Corps and worked in server management, logistics, and data workflows. That background shows up in how I build: clear controls, audit trails, and systems that fail safely.</p>
+    <section class="section band" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <header class="section-head reveal">
+          <p class="kicker">About me</p>
+          <h2 id="about-title">Reliable agents, <em>measured honestly.</em></h2>
+        </header>
+        <div class="about reveal">
+          <p>I'm an AI researcher in Los Angeles focused on the unglamorous half of agentic AI: making agents <strong>measurable</strong> and <strong>dependable</strong>. I build open-source tool-calling agents and multi-agent systems, then wrap them with eval harnesses, regression gates, and code-enforced guardrails, and I publish the results, including the failures.</p>
+          <p>I design and direct my projects and build them with AI coding agents: I set the requirements, test against real models and real data, and report limits alongside results.</p>
+          <p>Before AI, I served in the U.S. Marine Corps and worked in server management, logistics, and data workflows. That background shows up in how I build: clear controls, audit trails, and systems that fail safely.</p>
+        </div>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section class="section wrap" id="skills" aria-labelledby="skills-title">
-      <div class="section-head">
-        <p class="kicker">03 — Skills</p>
-        <h2 id="skills-title">Toolkit</h2>
-      </div>
+      <header class="section-head reveal">
+        <p class="kicker">Skills</p>
+        <h2 id="skills-title">My toolkit</h2>
+      </header>
       <div class="skills">
-        <div class="skill-group"><h3>AI / ML</h3><ul class="chips"><li>LLM agents</li><li>Tool calling</li><li>Multi-agent orchestration</li><li>Evals &amp; regression gates</li><li>LLM-as-judge</li><li>Guardrails</li><li>Audit logs</li><li>Token/cost budgets</li><li>BPE tokenization</li></ul></div>
-        <div class="skill-group"><h3>Languages</h3><ul class="chips"><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Rust</li><li>HTML/CSS</li><li>English &amp; Spanish</li></ul></div>
-        <div class="skill-group"><h3>Tools</h3><ul class="chips"><li>FastAPI</li><li>React</li><li>Cloudflare Workers</li><li>SQLite</li><li>PyO3</li><li>pytest</li><li>Playwright</li><li>Docker</li><li>GitHub Actions</li><li>Git</li></ul></div>
+        <div class="skill-group reveal"><h3>AI / ML</h3><ul class="chips"><li>LLM agents</li><li>Tool calling</li><li>Multi-agent orchestration</li><li>Evals &amp; regression gates</li><li>LLM-as-judge</li><li>Guardrails</li><li>Audit logs</li><li>Token/cost budgets</li><li>BPE tokenization</li></ul></div>
+        <div class="skill-group reveal"><h3>Languages</h3><ul class="chips"><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Rust</li><li>HTML/CSS</li><li>English &amp; Spanish</li></ul></div>
+        <div class="skill-group reveal"><h3>Tools</h3><ul class="chips"><li>FastAPI</li><li>React</li><li>Cloudflare Workers</li><li>SQLite</li><li>PyO3</li><li>pytest</li><li>Playwright</li><li>Docker</li><li>GitHub Actions</li><li>Git</li></ul></div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section class="section wrap" id="experience" aria-labelledby="exp-title">
-      <div class="section-head">
-        <p class="kicker">04 — Experience &amp; education</p>
-        <h2 id="exp-title">Background</h2>
-      </div>
+      <header class="section-head reveal">
+        <p class="kicker">Experience &amp; education</p>
+        <h2 id="exp-title">Where I've been</h2>
+      </header>
       <ol class="timeline">
-        <li>
-          <div class="when">2024 – Present</div>
+        <li class="reveal">
+          <p class="when">2024 – Present</p>
           <div class="what"><h3>Data &amp; Workflow Specialist</h3><p class="org">Solvis Corp. · Commerce, CA</p><p>Validate and integrate multi-source data, automate spreadsheet workflows, and build visualizations for leadership.</p></div>
         </li>
-        <li>
-          <div class="when">2015 – 2019</div>
+        <li class="reveal">
+          <p class="when">2015 – 2019</p>
           <div class="what"><h3>Heavy Equipment Manager / Logistics Specialist</h3><p class="org">U.S. Artificial Grass · Los Angeles, CA</p><p>Managed inventory, freight, and equipment with computer-aided inventory, GPS, and diagnostic tools, including a military installation project.</p></div>
         </li>
-        <li>
-          <div class="when">2014 – 2017</div>
+        <li class="reveal">
+          <p class="when">2014 – 2017</p>
           <div class="what"><h3>IT Specialist / Server Management</h3><p class="org">Kesem Technology · Washington, DC</p><p>Maintained server infrastructure for high availability and security compliance: patching, network health monitoring, and OSI-model root-cause troubleshooting.</p></div>
         </li>
-        <li>
-          <div class="when">2010 – 2014</div>
+        <li class="reveal">
+          <p class="when">2010 – 2014</p>
           <div class="what"><h3>Heavy Equipment Operator, Lance Corporal (E-3)</h3><p class="org">United States Marine Corps</p><p>Maintained readiness of equipment, communications gear, and vehicles under strict security protocols.</p></div>
         </li>
       </ol>
-      <div class="edu">
+      <div class="edu reveal">
         <h3>Certifications &amp; education</h3>
         <ul>
           <li><strong>CompTIA A+</strong> — earned 2014 · The Hope Project, Washington, DC</li>
@@ -242,17 +268,20 @@
       </div>
     </section>
 
-    <!-- RESUME + CONTACT -->
+    <!-- CONTACT -->
     <section class="section wrap" id="contact" aria-labelledby="contact-title">
-      <div class="contact-card">
-        <p class="kicker">05 — Contact</p>
-        <h2 id="contact-title">Let's build reliable agents.</h2>
-        <p class="lede">Seeking AI Research Engineer / Applied AI roles in Los Angeles or remote.</p>
+      <div class="contact-card reveal">
+        <p class="kicker">Get in touch</p>
+        <h2 id="contact-title">Let's build reliable agents <em>together.</em></h2>
+        <p class="lede">I'm looking for AI Research Engineer / Applied AI roles in Los Angeles or remote. I'd love to hear from you.</p>
         <div class="contact-links">
-          <a class="btn primary" href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a>
-          <a class="btn" href="https://www.linkedin.com/in/kevin-fairley-94330b42a/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="assets/Kevin_Fairley_Resume.pdf" download>Résumé (PDF)</a>
+          <a class="btn primary" href="mailto:kfairley9999@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+            kfairley9999@gmail.com
+          </a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/kevin-fairley-94330b42a/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn secondary" href="assets/Kevin_Fairley_Resume.pdf" download>Résumé (PDF)</a>
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ Personal portfolio of **Kevin Fairley**, AI Researcher (Agentic Systems, Evaluat
 
 ## What's on it
 
-- **Featured work:** agent-crew (multi-agent research desk), llm-watch (LLM call ledger and eval regression gate), mini-agent (tool-calling agent with self-check and eval harness), Personal Knowledge Engine (RAG), hermes-phone-agent (code-enforced guardrails), fast-tokenizer (Rust BPE tokenizer), and the U.S. Economic Indicators Dashboard (daily FRED data pipeline with recession signals). Each card links to the code and, where one exists, a live demo.
+- **Featured work:** LeadFlow MCP (Model Context Protocol server for a small-business lead pipeline, live on Cloudflare Workers and D1), agent-crew (multi-agent research desk), llm-watch (LLM call ledger and eval regression gate), mini-agent (tool-calling agent with self-check and eval harness), Personal Knowledge Engine (RAG), hermes-phone-agent (code-enforced guardrails), fast-tokenizer (Rust BPE tokenizer), and the U.S. Economic Indicators Dashboard (daily FRED data pipeline with recession signals). Each card links to the code and, where one exists, a live demo.
 - **More shipped apps:** Turf Preview, Light Preview, Pulse CRM, EquiFlow.
 - About, skills, experience and education, a downloadable résumé ([PDF](assets/Kevin_Fairley_Resume.pdf)), and contact links.
 
@@ -39,6 +39,7 @@ Every fact on the page comes from my résumé or my GitHub repositories.
 | `assets/kevin-fairley-128.webp` / `.jpg` | Small photo for the nav bar |
 | `assets/fonts/` | Fraunces and Inter (SIL Open Font License 1.1), Latin subset |
 | `assets/us-economic-dashboard.webp` / `.jpg` | Product shot for the dashboard card |
+| `assets/leadflow-mcp.webp` / `.jpg` | Live MCP session shot for the LeadFlow card |
 | `assets/favicon.svg` | Favicon |
 
 ## Run locally

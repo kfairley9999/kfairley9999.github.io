@@ -11,7 +11,7 @@ Personal portfolio of **Kevin Fairley**, AI Researcher (Agentic Systems, Evaluat
 
 ## What's on it
 
-- **Featured work:** LeadFlow MCP (Model Context Protocol server for a small-business lead pipeline, live on Cloudflare Workers and D1), agent-crew (multi-agent research desk), llm-watch (LLM call ledger and eval regression gate), mini-agent (tool-calling agent with self-check and eval harness), Personal Knowledge Engine (RAG), hermes-phone-agent (code-enforced guardrails), fast-tokenizer (Rust BPE tokenizer), and the U.S. Economic Indicators Dashboard (daily FRED data pipeline with recession signals). Each card links to the code and, where one exists, a live demo.
+- **Featured work:** catchpr and LeadFlow MCP (Provefirst projects: a proof-gated PR reviewer and an MCP lead-pipeline server, both with live demos), ForgePulse (a prototype for PR triage, CI routing, and portable policy, with a live playground), mcp-doctor, ai-sdk-resilience, agent-crew, llm-watch, mcp-sync, mini-agent, Personal Knowledge Engine (RAG), hermes-phone-agent, fast-tokenizer, and the U.S. Economic Indicators Dashboard. Each card links to the code and, where one exists, a live demo.
 - **More shipped apps:** Turf Preview, Light Preview, Pulse CRM, EquiFlow.
 - About, skills, experience and education, a downloadable résumé ([PDF](assets/Kevin_Fairley_Resume.pdf)), and contact links.
 
@@ -39,7 +39,9 @@ Every fact on the page comes from my résumé or my GitHub repositories.
 | `assets/kevin-fairley-128.webp` / `.jpg` | Small photo for the nav bar |
 | `assets/fonts/` | Fraunces and Inter (SIL Open Font License 1.1), Latin subset |
 | `assets/us-economic-dashboard.webp` / `.jpg` | Product shot for the dashboard card |
+| `assets/catchpr.webp` / `.jpg` | Replay playground shot for the catchpr card |
 | `assets/leadflow-mcp.webp` / `.jpg` | Live MCP session shot for the LeadFlow card |
+| `assets/forgepulse.webp` / `.jpg` | Playground shot for the ForgePulse prototype card |
 | `assets/favicon.svg` | Favicon |
 
 ## Run locally

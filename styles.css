@@ -175,6 +175,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .card h3 { font-size: 1.6rem; margin-top: 4px; letter-spacing: -0.02em; }
 .sub { font-weight: 600; font-size: 15.5px; color: var(--ink-2); margin-top: -4px; line-height: 1.45; }
 .desc { color: var(--muted); font-size: 15.5px; line-height: 1.65; }
+.desc code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; font-weight: 500; color: var(--ink); background: var(--chip); padding: 0.08em 0.35em; border-radius: 4px; }
 .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .stack li, .chips li { font-size: 13px; font-weight: 500; padding: 5px 11px; border-radius: 999px; background: var(--chip); color: var(--ink-2); }
 .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 10px; }

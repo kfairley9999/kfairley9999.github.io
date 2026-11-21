@@ -98,7 +98,7 @@
       <ul class="stats">
         <li><strong>14/15</strong><span>mini-agent eval score on a hosted Groq model</span></li>
         <li><strong>905,180</strong><span>tokens at exact GPT-2 parity with tiktoken</span></li>
-        <li><strong>8</strong><span>live apps deployed on Cloudflare Workers</span></li>
+        <li><strong>12</strong><span>live apps deployed on Cloudflare Workers</span></li>
       </ul>
     </section>
 
@@ -113,22 +113,86 @@
       <div class="cards">
         <article class="card feature reveal">
           <div class="feature-body">
-            <div class="card-top"><span class="tag">MCP server</span><span class="live">Live on Workers</span></div>
-            <h3>LeadFlow MCP</h3>
-            <p class="sub">An AI front desk for a small service business</p>
-            <p class="desc">A Model Context Protocol server that lets Claude, Cursor, or any MCP client run a shop&rsquo;s lead pipeline: 11 tools, 3 resources, and 2 prompts to capture leads, score them with a published rubric, log conversations, schedule follow-ups, and report on the pipeline. It speaks stdio and Streamable HTTP on SQLite, and runs live on Cloudflare Workers with D1 behind a bearer token. Tested like production code: 113 unit and integration tests plus 4 end-to-end tests, 99.61% line and 96.88% branch coverage, and an 82% Stryker mutation score.</p>
-            <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>MCP SDK</li><li>SQLite</li><li>Cloudflare Workers</li><li>D1</li><li>Vitest</li><li>Stryker</li></ul>
+            <div class="card-top"><span class="tag">Proof-gated review</span><span class="live">Live demo</span></div>
+            <h3>catchpr</h3>
+            <p class="sub">A Provefirst project — a PR comment only when a test proves the change</p>
+            <p class="desc">A GitHub pull-request reviewer that comments only when a generated pytest passes on the base commit and fails on the head, every time it is run, and a one-line command reproduces that result. If it cannot prove a behavior change, it stays silent. Candidates must pass on base 3/3 and fail on head 3/3; flaky tests are dropped, and deterministic assessors filter false positives. A live replay playground walks through recorded cases.</p>
+            <ul class="stack" aria-label="Tech stack"><li>Python</li><li>pytest</li><li>GitHub Actions</li><li>Cloudflare Workers</li></ul>
             <div class="links">
-              <a class="btn sm primary" href="https://github.com/kfairy9999/leadflow-mcp" target="_blank" rel="noopener">View the code <span aria-hidden="true">↗</span><span class="sr"> (LeadFlow MCP on GitHub, opens in a new tab)</span></a>
-              <a class="btn sm secondary" href="https://leadflow-mcp.kfairley9999.workers.dev/health" target="_blank" rel="noopener">Live endpoint<span class="sr"> for LeadFlow MCP (health check, opens in a new tab)</span></a>
+              <a class="btn sm primary" href="https://catchpr.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (catchpr replay playground, opens in a new tab)</span></a>
+              <a class="btn sm secondary" href="https://github.com/kfairy9999/catchpr" target="_blank" rel="noopener">Code<span class="sr"> for catchpr</span></a>
             </div>
           </div>
-          <a class="feature-shot" href="https://github.com/kfairy9999/leadflow-mcp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <a class="feature-shot" href="https://catchpr.kfairley9999.workers.dev" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <picture>
+              <source srcset="assets/catchpr.webp" type="image/webp">
+              <img src="assets/catchpr.jpg" alt="" width="1200" height="750" loading="lazy" decoding="async">
+            </picture>
+          </a>
+        </article>
+
+        <article class="card feature reveal">
+          <div class="feature-body">
+            <div class="card-top"><span class="tag">MCP server</span><span class="live">Live demo</span></div>
+            <h3>LeadFlow MCP</h3>
+            <p class="sub">A Provefirst project — an AI front desk for a small service business</p>
+            <p class="desc">A Model Context Protocol server that lets Claude, Cursor, or any MCP client run a shop&rsquo;s lead pipeline: 11 tools, 3 resources, and 2 prompts to capture leads, score them with a published rubric, log conversations, schedule follow-ups, and report on the pipeline. It speaks stdio and Streamable HTTP on SQLite, and runs live on Cloudflare Workers with D1 behind a bearer token. Tested like production code: 113 unit and integration tests plus 4 end-to-end tests, 99.61% line and 96.88% branch coverage, and an 82% Stryker mutation score. The live demo is a recorded walk through a fictional pipeline.</p>
+            <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>MCP SDK</li><li>SQLite</li><li>Cloudflare Workers</li><li>D1</li><li>Vitest</li><li>Stryker</li></ul>
+            <div class="links">
+              <a class="btn sm primary" href="https://leadflow-mcp.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (LeadFlow MCP demo, opens in a new tab)</span></a>
+              <a class="btn sm secondary" href="https://github.com/kfairy9999/leadflow-mcp" target="_blank" rel="noopener">Code<span class="sr"> for LeadFlow MCP</span></a>
+            </div>
+          </div>
+          <a class="feature-shot" href="https://leadflow-mcp.kfairley9999.workers.dev" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <picture>
               <source srcset="assets/leadflow-mcp.webp" type="image/webp">
               <img src="assets/leadflow-mcp.jpg" alt="" width="1200" height="750" loading="lazy" decoding="async">
             </picture>
           </a>
+        </article>
+
+        <article class="card feature reveal">
+          <div class="feature-body">
+            <div class="card-top"><span class="tag">Prototype</span><span class="live">Live demo</span></div>
+            <h3>ForgePulse</h3>
+            <p class="sub">PR triage, CI routing, and portable policy for agentic dev orgs</p>
+            <p class="desc">A small HTTP service that sits next to GitHub: it scores noisy or AI-generated pull requests, routes CI with a priority queue and failover, computes downstream blast radius, searches code and owners, and loads policy from YAML instead of GitHub&rsquo;s UI. This is a prototype &mdash; state is in-memory, not durable, not multi-tenant, and not production. The live playground uses seeded fictional data.</p>
+            <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>Cloudflare Workers</li></ul>
+            <div class="links">
+              <a class="btn sm primary" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (ForgePulse playground, opens in a new tab)</span></a>
+              <a class="btn sm secondary" href="https://github.com/kfairy9999/forgepulse" target="_blank" rel="noopener">Code<span class="sr"> for ForgePulse</span></a>
+            </div>
+          </div>
+          <a class="feature-shot" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <picture>
+              <source srcset="assets/forgepulse.webp" type="image/webp">
+              <img src="assets/forgepulse.jpg" alt="" width="1200" height="750" loading="lazy" decoding="async">
+            </picture>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top"><span class="tag">Developer tools</span><span class="live">Live demo</span></div>
+          <h3>mcp-doctor</h3>
+          <p class="sub">Lint, convert, and handshake-test MCP client configs</p>
+          <p class="desc">MCP configs fail quietly: a missing <code>-y</code>, a <code>url</code> where the client reads <code>serverUrl</code>, or an <code>npx</code> that a GUI cannot see on <code>PATH</code> looks like a client bug and is usually the config. mcp-doctor checks the file against the client that will load it (Claude, Cursor, VS Code, Windsurf, Codex, Gemini CLI, Zed, and more), rewrites it for the client you actually use, and opens a real initialize handshake so you can see the failure. The live playground checks a paste in the request and then drops it.</p>
+          <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>MCP</li><li>CLI</li><li>Cloudflare Workers</li></ul>
+          <div class="links">
+            <a class="btn sm primary" href="https://mcp-doctor.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (mcp-doctor playground, opens in a new tab)</span></a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/mcp-doctor" target="_blank" rel="noopener">Code<span class="sr"> for mcp-doctor</span></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top"><span class="tag">Reliability</span><span class="live">Live demo</span></div>
+          <h3>ai-sdk-resilience</h3>
+          <p class="sub">Retry, fallback, circuit breaker, and hedge middleware for the Vercel AI SDK</p>
+          <p class="desc">Wraps any Vercel AI SDK <code>LanguageModel</code> with retry (backoff that respects <code>Retry-After</code>), ordered fallbacks, a per-model circuit breaker, and optional hedging. One wrapper works with <code>generateText</code>, <code>streamText</code>, <code>generateObject</code>, and <code>streamObject</code>. Failed or cancelled attempts are not added to <code>result.usage</code>; billed tokens across attempts are reported separately. The live playground lets you inject failures and watch the middleware respond.</p>
+          <ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>Vercel AI SDK</li><li>Cloudflare Workers</li></ul>
+          <div class="links">
+            <a class="btn sm primary" href="https://ai-sdk-resilience.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (ai-sdk-resilience playground, opens in a new tab)</span></a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/ai-sdk-resilience" target="_blank" rel="noopener">Code<span class="sr"> for ai-sdk-resilience</span></a>
+          </div>
         </article>
 
         <article class="card reveal">
@@ -152,6 +216,18 @@
           <div class="links">
             <a class="btn sm primary" href="https://llm-watch.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (llm-watch, opens in a new tab)</span></a>
             <a class="btn sm secondary" href="https://github.com/kfairy9999/llm-watch" target="_blank" rel="noopener">Code<span class="sr"> for llm-watch</span></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top"><span class="tag">MCP</span></div>
+          <h3>mcp-sync</h3>
+          <p class="sub">A synchronous client for the official MCP Python SDK</p>
+          <p class="desc">Use MCP from Celery, Django, a script, or a Jupyter kernel. One <code>SyncClient</code> owns a background event-loop thread so the session survives from call to call — unlike wrapping the async SDK in <code>asyncio.run</code>, which opens a new connection every time and raises inside a running loop. Built on the public <code>mcp.Client</code>, not a second protocol implementation. A recorded demo is in the repository.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Python</li><li>MCP SDK</li><li>anyio</li></ul>
+          <div class="links">
+            <a class="btn sm primary" href="https://github.com/kfairy9999/mcp-sync" target="_blank" rel="noopener">View the code <span aria-hidden="true">↗</span><span class="sr"> (mcp-sync on GitHub, opens in a new tab)</span></a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/mcp-sync#demo" target="_blank" rel="noopener">Demo<span class="sr"> recording for mcp-sync</span></a>
           </div>
         </article>
 
@@ -225,7 +301,7 @@
         <h3 class="subhead">More shipped apps</h3>
         <ul class="mini-list">
           <li class="mini">
-            <div class="mini-body"><h4>Turf Preview</h4><p>Phone-first generative-AI app: upload a yard photo, pick a turf style, get a photorealistic install mockup with a before/after slider. Photos are not stored. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
+            <div class="mini-body"><h4>Turf Preview</h4><p>Phone-first generative-AI app: upload a yard photo, pick a turf style, get a photorealistic install mockup with a before/after slider. Photos are not stored. Generation uses a Qwen Image Edit model on Hugging Face. Live app is access-PIN gated.</p><p class="stack-inline">Python · FastAPI · Qwen Image Edit</p></div>
             <div class="links"><a class="btn sm secondary" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span><span class="sr"> Turf Preview</span></a><a class="btn sm ghost" href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Code<span class="sr"> for Turf Preview</span></a></div>
           </li>
           <li class="mini">
@@ -244,6 +320,7 @@
       </div>
     </section>
 
+
     <!-- ABOUT -->
     <section class="section band" id="about" aria-labelledby="about-title">
       <div class="wrap about-grid">
@@ -253,6 +330,7 @@
         </header>
         <div class="about reveal">
           <p>I'm an AI researcher in Los Angeles focused on the unglamorous half of agentic AI: making agents <strong>measurable</strong> and <strong>dependable</strong>. I build open-source tool-calling agents and multi-agent systems, then wrap them with eval harnesses, regression gates, and code-enforced guardrails, and I publish the results, including the failures.</p>
+          <p>I founded <strong>Provefirst</strong> to build agents that act only when they can prove their work. catchpr and LeadFlow MCP, featured below, are the first two public projects.</p>
           <p>I design and direct my projects and build them with AI coding agents: I set the requirements, test against real models and real data, and report limits alongside results.</p>
           <p>Before AI, I worked in server management, logistics, and data workflows. That background shows up in how I build: clear controls, audit trails, and systems that fail safely.</p>
         </div>

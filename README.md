@@ -11,7 +11,7 @@ Personal portfolio of **Kevin Fairley**, AI Researcher (Agentic Systems, Evaluat
 
 ## What's on it
 
-- **Featured work:** catchpr and LeadFlow MCP (Provefirst projects: a proof-gated PR reviewer and an MCP lead-pipeline server, both with live demos), ForgePulse (a prototype for PR triage, CI routing, and portable policy, with a live playground), mcp-doctor, ai-sdk-resilience, agent-crew, llm-watch, mcp-sync, mini-agent, Personal Knowledge Engine (RAG), hermes-phone-agent, fast-tokenizer, and the U.S. Economic Indicators Dashboard. Each card links to the code and, where one exists, a live demo.
+- **Featured work:** catchpr and LeadFlow MCP (Provefirst projects: a proof-gated PR reviewer and an MCP lead-pipeline server, both with live demos), ForgePulse (durable PR triage, CI routing records, and portable policy, with a live playground), mcp-doctor, ai-sdk-resilience, agent-crew, llm-watch, mcp-sync, mini-agent, Personal Knowledge Engine (RAG), hermes-phone-agent, fast-tokenizer, and the U.S. Economic Indicators Dashboard. Each card links to the code and, where one exists, a live demo.
 - **More shipped apps:** Turf Preview, Light Preview, Pulse CRM, EquiFlow.
 - About, skills, experience and education, a downloadable résumé ([PDF](assets/Kevin_Fairley_Resume.pdf)), and contact links.
 
@@ -41,7 +41,7 @@ Every fact on the page comes from my résumé or my GitHub repositories.
 | `assets/us-economic-dashboard.webp` / `.jpg` | Product shot for the dashboard card |
 | `assets/catchpr.webp` / `.jpg` | Replay playground shot for the catchpr card |
 | `assets/leadflow-mcp.webp` / `.jpg` | Live MCP session shot for the LeadFlow card |
-| `assets/forgepulse.webp` / `.jpg` | Playground shot for the ForgePulse prototype card |
+| `assets/forgepulse.webp` / `.jpg` | Playground shot for the ForgePulse 0.2.0 card |
 | `assets/favicon.svg` | Favicon |
 
 ## Run locally

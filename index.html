@@ -153,11 +153,11 @@
 
         <article class="card feature reveal">
           <div class="feature-body">
-            <div class="card-top"><span class="tag">Prototype</span><span class="live">Live demo</span></div>
+            <div class="card-top"><span class="tag">PR triage</span><span class="live">Live demo</span></div>
             <h3>ForgePulse</h3>
             <p class="sub">PR triage, CI routing, and portable policy for agentic dev orgs</p>
-            <p class="desc">A small HTTP service that sits next to GitHub: it scores noisy or AI-generated pull requests, routes CI with a priority queue and failover, computes downstream blast radius, searches code and owners, and loads policy from YAML instead of GitHub&rsquo;s UI. This is a prototype &mdash; state is in-memory, not durable, not multi-tenant, and not production. The live playground uses seeded fictional data.</p>
-            <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>Cloudflare Workers</li></ul>
+            <p class="desc">A small HTTP service that sits next to GitHub: it scores noisy or AI-generated pull requests, records CI failover routing, computes downstream blast radius, searches code and owners, and evaluates portable YAML policy. Version 0.2.0 stores isolated guest workspaces in Cloudflare D1, so state survives restarts. A visitor can try the sample org immediately, or connect their own repository with a webhook and an optional fine-grained PAT so changed files can be fetched. Mutating routes require auth and are rate-limited. 59 tests, 92% coverage. It is not a GitHub App yet, and RunnerMesh records routing decisions only &mdash; it does not launch runners.</p>
+            <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>TypeScript</li><li>Cloudflare Workers</li><li>D1</li><li>SQLite</li><li>pytest</li></ul>
             <div class="links">
               <a class="btn sm primary" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (ForgePulse playground, opens in a new tab)</span></a>
               <a class="btn sm secondary" href="https://github.com/kfairy9999/forgepulse" target="_blank" rel="noopener">Code<span class="sr"> for ForgePulse</span></a>

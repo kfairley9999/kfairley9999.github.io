@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LeadFlow MCP — AI Front Desk for Small Service Businesses</title>
+  <meta name="description" content="An open-source MCP server that runs a one-shop service business pipeline: 11 tools, deterministic lead scoring, follow-ups, and SQLite/D1 storage with zero paid APIs.">
+  <meta name="theme-color" content="#1c1612" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="LeadFlow MCP — AI Front Desk for Small Service Businesses">
+  <meta property="og:description" content="Capture leads, score them with a published rubric, log interactions, and track due follow-ups from Claude, Cursor, or any MCP client.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kfairy9999.github.io/leadflow-mcp/">
+  <meta property="og:image" content="https://kfairy9999.github.io/leadflow-mcp/poster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LeadFlow MCP — AI Front Desk for Small Service Businesses">
+  <meta name="twitter:description" content="11 MCP tools, deterministic scoring rubric, SQLite/D1 storage, 117 passing tests.">
+  <meta name="twitter:image" content="https://kfairy9999.github.io/leadflow-mcp/poster.jpg">
+  <link rel="canonical" href="https://kfairy9999.github.io/leadflow-mcp/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../assets/product.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += ' js';
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar" id="top">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="brand" href="../">
+        <picture><source srcset="../assets/kevin-fairley-128.webp" type="image/webp"><img class="brand-photo" src="../assets/kevin-fairley-128.jpg" alt="" width="36" height="36" decoding="async"></picture>
+        <span class="brand-name">Kevin Fairley</span>
+      </a>
+      <ul class="nav-links">
+        <li class="hide-sm"><a href="../#work">All Work</a></li>
+        <li><a href="./" aria-current="page">LeadFlow MCP</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#pilot">Book a pilot</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="p-hero wrap">
+      <div class="p-hero-inner">
+        <p class="kicker">Model Context Protocol · Small Service Business</p>
+        <h1>LeadFlow <em>MCP</em></h1>
+        <p class="lede">An open-source MCP server that lets Claude, Cursor, or any MCP client run a shop’s front desk: capture leads, score them with a published rubric, log interactions, schedule follow-ups, and report on the pipeline.</p>
+        <p class="who"><strong>Built for:</strong> Owners of small service businesses (plumbing, HVAC, roofing, landscaping, trades) and the AI-tooling teams who support them.</p>
+        <div class="p-actions">
+          <a class="btn primary" href="#pilot">Book a pilot</a>
+          <a class="btn secondary" href="https://leadflow-mcp.kfairley9999.workers.dev" target="_blank" rel="noopener">Open live demo ↗</a>
+          <a class="btn ghost" href="https://github.com/kfairy9999/leadflow-mcp" target="_blank" rel="noopener">Source on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="p-stats">
+        <div class="p-stat"><b>11 tools · 3 resources · 2 prompts</b><span>Runs over stdio on local SQLite or Streamable HTTP on Cloudflare D1</span></div>
+        <div class="p-stat"><b>117 passing tests</b><span>113 unit/integration + 4 E2E; 99.61% line and 96.88% branch coverage</span></div>
+        <div class="p-stat"><b>82.07% mutation score</b><span>Stryker mutation testing across the domain scoring and pipeline logic</span></div>
+        <div class="p-stat"><b>$0 API cost</b><span>No paid external APIs, no account lock-in, no network calls on the tool path</span></div>
+      </div>
+    </section>
+
+    <section class="section band" id="demo">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">Walkthrough</p>
+          <h2>See the morning brief and <em>published rubric</em> in action.</h2>
+        </header>
+        <div class="p-video-card reveal">
+          <video controls playsinline preload="metadata" poster="poster.jpg">
+            <source src="demo.webm" type="video/webm">
+            <source src="demo.mp4" type="video/mp4">
+          </video>
+          <div class="p-video-cap">
+            <span>Recorded walkthrough of the live Cloudflare Workers playground (fictional Northglass Plumbing dataset).</span>
+            <a href="https://leadflow-mcp.kfairley9999.workers.dev" target="_blank" rel="noopener">Try the interactive demo ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <header class="section-head reveal">
+        <p class="kicker">Problem &amp; solution</p>
+        <h2>Keep the call list out of <em>loose sticky notes</em>.</h2>
+      </header>
+      <div class="p-two reveal">
+        <div class="p-box">
+          <h3>The problem</h3>
+          <p>When a shop owner is on a job site, leads arrive across voicemails, texts, and web forms. Follow-ups slip, stale quotes sit for weeks, and general-purpose AI chats hallucinate priorities or lose track of dollar amounts.</p>
+        </div>
+        <div class="p-box">
+          <h3>How LeadFlow solves it</h3>
+          <p>The host model handles conversation; LeadFlow owns the books. Every call is Zod-validated, money is stored in integer cents, and scores are computed deterministically from a published rubric—never guessed by an LLM.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="features">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">Verified capabilities</p>
+          <h2>What the code <em>actually does</em>.</h2>
+        </header>
+        <div class="p-three reveal">
+          <div class="p-box">
+            <h3>11 MCP tools</h3>
+            <ul class="p-list">
+              <li><code>create_lead</code> &amp; <code>update_lead</code> with idempotency keys and optimistic locking (<code>expectedUpdatedAt</code>)</li>
+              <li><code>get_lead</code> &amp; <code>search_leads</code> across name, service, city, email, phone, and notes</li>
+              <li><code>log_interaction</code> across call, email, SMS, visit, or note</li>
+              <li><code>schedule_follow_up</code>, <code>set_follow_up_status</code>, and <code>list_due_follow_ups</code></li>
+              <li><code>pipeline_summary</code> &amp; formula-safe <code>export_leads_csv</code></li>
+            </ul>
+          </div>
+          <div class="p-box">
+            <h3>Deterministic 0–100 rubric</h3>
+            <ul class="p-list">
+              <li><strong>Source:</strong> referral (+22), website (+14), walk-in (+12), phone (+8), other (+3)</li>
+              <li><strong>Reachability:</strong> phone (+10), email (+8), or unreachable (-12)</li>
+              <li><strong>Urgency &amp; value:</strong> high urgency (+20); job value up to +16 ($5,000+)</li>
+              <li><strong>Stage &amp; recency:</strong> proposal (+16), active &le;2d (+16), quiet &gt;21d (-18)</li>
+              <li>Bands: <code>hot</code> (75+), <code>warm</code> (50+), <code>cool</code> (25+), <code>cold</code></li>
+            </ul>
+          </div>
+          <div class="p-box">
+            <h3>Resources, prompts &amp; safety</h3>
+            <ul class="p-list">
+              <li>Resources: <code>leadflow://pipeline</code>, <code>leadflow://scoring-model</code>, and <code>leadflow://lead/{id}</code></li>
+              <li>Prompts: morning brief and grounded follow-up draft</li>
+              <li>Bearer-token guard on <code>/mcp</code> in Cloudflare Workers with D1</li>
+              <li>CSV export escapes leading <code>=</code>, <code>+</code>, <code>-</code>, and <code>@</code> cells</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="p-limits reveal">
+        <p class="kicker">Honest scope</p>
+        <h2>Portfolio &amp; pilot notes</h2>
+        <ul>
+          <li>Open-source MIT software (Node.js &ge;22.13 with built-in <code>node:sqlite</code>, or Cloudflare Workers + D1).</li>
+          <li>The live demo at <code>leadflow-mcp.kfairley9999.workers.dev</code> uses fictional seed data (Northglass Plumbing). No production customers or live user traffic are claimed.</li>
+          <li>Public <code>/api</code> and <code>/health</code> return metadata only and zero lead records; <code>/mcp</code> requires a bearer token.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section band" id="pilot">
+      <div class="wrap">
+        <div class="p-form-wrap reveal">
+          <p class="kicker">Book a pilot</p>
+          <h2>Deploy LeadFlow for <em>your shop or team</em>.</h2>
+          <p class="lede">Open-source MIT code is free to self-host. Want Kevin to wire LeadFlow MCP into your shop’s Claude/Cursor desk or Cloudflare Workers account? Send your details below.</p>
+          <form data-lead-form data-product="LeadFlow MCP" data-recipient="kfairley9999@gmail.com" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain">
+            <div class="p-form-grid">
+              <div class="p-field">
+                <label for="lf-name">Name</label>
+                <input id="lf-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+              </div>
+              <div class="p-field">
+                <label for="lf-company">Company / Shop</label>
+                <input id="lf-company" name="company" type="text" autocomplete="organization" placeholder="Harbor Plumbing Co.">
+              </div>
+              <div class="p-field">
+                <label for="lf-email">Email</label>
+                <input id="lf-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
+              </div>
+              <div class="p-field">
+                <label for="lf-phone">Phone (optional)</label>
+                <input id="lf-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567">
+              </div>
+              <div class="p-field full">
+                <label for="lf-need">What do you need?</label>
+                <textarea id="lf-need" name="need" rows="3" required placeholder="Tell me about your lead volume, MCP client (Claude, Cursor), and whether you want local SQLite or Cloudflare D1."></textarea>
+              </div>
+            </div>
+            <div class="p-form-actions">
+              <button class="btn primary" type="submit">Request pilot via email</button>
+              <span class="p-form-note">Routes directly to <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a> — no third-party form tracker.</span>
+            </div>
+            <div class="p-form-status" data-form-status aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <p>© <span id="year">2026</span> Kevin Fairley · Los Angeles · <a href="../">Portfolio</a> · <a href="https://github.com/kfairy9999/leadflow-mcp" target="_blank" rel="noopener">GitHub</a></p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
+
+  <script src="../script.js" defer></script>
+  <script src="../assets/lead-form.js" defer></script>
+</body>
+</html>

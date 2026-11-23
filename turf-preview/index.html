@@ -1,222 +1,73 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Turf Preview — Instant Yard-to-Turf Install Mockups</title>
-  <meta name="description" content="Phone-first generative AI app for artificial grass installers: snap a yard photo, pick one of 5 turf styles, and show homeowners a before/after slider without storing photos.">
-  <meta name="theme-color" content="#1c1612" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
-  <meta property="og:title" content="Turf Preview — Instant Yard-to-Turf Install Mockups">
-  <meta property="og:description" content="Upload a yard photo, pick a turf style, and generate a photorealistic before/after mockup on Cloudflare Workers AI (FLUX.2).">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kfairy9999.github.io/turf-preview/">
-  <meta property="og:image" content="https://kfairy9999.github.io/turf-preview/poster.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Turf Preview — Instant Yard-to-Turf Install Mockups">
-  <meta name="twitter:description" content="5 turf styles, before/after slider, Save & Share, photos never stored.">
-  <meta name="twitter:image" content="https://kfairy9999.github.io/turf-preview/poster.jpg">
-  <link rel="canonical" href="https://kfairy9999.github.io/turf-preview/">
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="../assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../assets/product.css">
-  <script>
-    (function () {
-      var d = document.documentElement;
-      d.className += ' js';
-      try {
-        var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Turf Preview — Instant Yard-to-Turf Install Mockups</title>
+<meta name="description" content="Phone-first generative AI app for artificial grass installers: snap a yard photo, pick one of 5 turf styles, and show homeowners a before/after slider without storing photos.">
+<link rel="canonical" href="https://kfairy9999.github.io/turf-preview/">
+<meta name="theme-color" content="#09090b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kevin Fairley">
+<meta property="og:title" content="Turf Preview — Instant Yard-to-Turf Install Mockups">
+<meta property="og:description" content="Upload a yard photo, pick a turf style, and generate a photorealistic before/after mockup on Cloudflare Workers AI (FLUX.2).">
+<meta property="og:url" content="https://kfairy9999.github.io/turf-preview/">
+<meta property="og:image" content="https://kfairy9999.github.io/turf-preview/poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turf Preview — Instant Yard-to-Turf Install Mockups">
+<meta name="twitter:description" content="5 turf styles, before/after slider, Save &amp; Share, photos never stored.">
+<meta name="twitter:image" content="https://kfairy9999.github.io/turf-preview/poster.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="poster.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="../assets/lp.css">
+<style>:root{--accent:#15803d;--accent-2:#65a30d;--accent-l:#bbf7d0;--accent-soft:#ecfdf5}</style>
+<script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="topbar" id="top">
-    <nav class="nav wrap" aria-label="Primary">
-      <a class="brand" href="../">
-        <picture><source srcset="../assets/kevin-fairley-128.webp" type="image/webp"><img class="brand-photo" src="../assets/kevin-fairley-128.jpg" alt="" width="36" height="36" decoding="async"></picture>
-        <span class="brand-name">Kevin Fairley</span>
-      </a>
-      <ul class="nav-links">
-        <li class="hide-sm"><a href="../#work">All Work</a></li>
-        <li><a href="./" aria-current="page">Turf Preview</a></li>
-        <li><a href="#demo">Demo</a></li>
-        <li><a href="#pilot">Book a pilot</a></li>
-      </ul>
-      <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme">
-        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
-        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
-      </button>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="p-hero wrap">
-      <div class="p-hero-inner">
-        <p class="kicker">Phone-First Sales Tool · Landscape &amp; Turf Installers</p>
-        <h1>Turf <em>Preview</em></h1>
-        <p class="lede">Snap or upload a customer’s yard photo on site, pick one of five artificial-grass styles, and hand them a photorealistic before/after mockup with your company name and phone number burned into the share image.</p>
-        <p class="who"><strong>Built for:</strong> Artificial-grass contractors, landscape sales reps, and estimators closing residential turf jobs.</p>
-        <div class="p-actions">
-          <a class="btn primary" href="#pilot">Book a pilot / walkthrough</a>
-          <a class="btn secondary" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Open live app (PIN-gated) ↗</a>
-          <a class="btn ghost" href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Source on GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="p-stats">
-        <div class="p-stat"><b>5 turf styles</b><span>Lush Green, Natural Olive, Mow Stripes, Emerald, and Putting Green</span></div>
-        <div class="p-stat"><b>0 photos stored</b><span>Client photos pass directly to Workers AI and are never persisted</span></div>
-        <div class="p-stat"><b>FLUX.2 Klein</b><span>Runs on Cloudflare Workers AI with automatic 9B → 4B fallback</span></div>
-        <div class="p-stat"><b>Branded export</b><span>Canvas-drawn before/after image with your shop name &amp; phone from Settings</span></div>
-      </div>
-    </section>
-
-    <section class="section band" id="demo">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <p class="kicker">Walkthrough</p>
-          <h2>From bare or patchy lawn to a <em>before/after slider</em>.</h2>
-        </header>
-        <div class="p-video-card reveal">
-          <video controls playsinline preload="metadata" poster="poster.jpg">
-            <source src="demo.webm" type="video/webm">
-            <source src="demo.mp4" type="video/mp4">
-          </video>
-          <div class="p-video-cap">
-            <span>Interactive before/after walkthrough on a public-domain ranch lawn (Lush Green preset).</span>
-            <a href="#pilot">Request demo access ↗</a>
-          </div>
-        </div>
-
-        <div class="p-compare reveal" style="margin-top:18px;">
-          <figure class="p-shot">
-            <img src="before-sample.jpg" alt="Original ranch house lawn before turf preview" loading="lazy">
-            <figcaption>Original yard photo (cropped in-browser to 512px long side before generation).</figcaption>
-          </figure>
-          <figure class="p-shot">
-            <img src="after-sample.jpg" alt="Generated Lush Green artificial turf mockup keeping house and driveway intact" loading="lazy">
-            <figcaption>Lush Green output: house, driveway, trees, and daylight stay intact; only turf changes.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <header class="section-head reveal">
-        <p class="kicker">Problem &amp; solution</p>
-        <h2>Homeowners struggle to picture <em>synthetic turf</em> on their own house.</h2>
-      </header>
-      <div class="p-two reveal">
-        <div class="p-box">
-          <h3>The problem</h3>
-          <p>Sample turf squares in a truck bed do not show how a full front yard will look against a homeowner’s stucco, driveway, and shade trees—slowing down estimates and follow-up closes.</p>
-        </div>
-        <div class="p-box">
-          <h3>How Turf Preview solves it</h3>
-          <p>A zero-framework phone web app crops the photo in the browser, prompts FLUX.2 to replace only lawn and bare dirt while preserving the house and hardscape, and renders an instant slider plus branded Save/Share export.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section band" id="features">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <p class="kicker">Verified capabilities</p>
-          <h2>What the code <em>actually does</em>.</h2>
-        </header>
-        <div class="p-three reveal">
-          <div class="p-box">
-            <h3>In-browser image pipeline</h3>
-            <ul class="p-list">
-              <li>Crops uploads to valid 9:16–16:9 aspect ratios and resizes to 512px max side</li>
-              <li>Requests a 1024px result at the original aspect ratio</li>
-              <li>Draws the interactive before/after slider, caption bar, and disclaimer on an HTML canvas</li>
-            </ul>
-          </div>
-          <div class="p-box">
-            <h3>Access-gated Worker API</h3>
-            <ul class="p-list">
-              <li>Constant-time SHA-256 comparison on the <code>x-access-pin</code> header</li>
-              <li>3-attempt retry on transient 3043 errors, then automatic fallback to <code>flux-2-klein-4b</code></li>
-              <li>Strict 3 MB upload limit and zero server-side photo storage</li>
-            </ul>
-          </div>
-          <div class="p-box">
-            <h3>Related: Light Preview</h3>
-            <ul class="p-list">
-              <li>Same phone-first Workers AI FLUX.2 pipeline built for holiday lighting dusk mockups</li>
-              <li>Live at <a href="https://light-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">light-preview.kfairley9999.workers.dev ↗</a> (also PIN-gated)</li>
-              <li>Can be white-labeled together with Turf Preview for multi-service crews</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <div class="p-limits reveal">
-        <p class="kicker">Honest scope</p>
-        <h2>Important notes</h2>
-        <ul>
-          <li>Preview only — actual artificial grass installation, drainage, and seam layout may vary.</li>
-          <li>The live Cloudflare Worker requires an access PIN to protect the daily Workers AI allowance (10,000 free neurons/day, roughly 7 Best-mode or 100 Saver-mode images).</li>
-          <li>Use the form below to request a live walkthrough or custom deployment on your own Cloudflare account.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section band" id="pilot">
-      <div class="wrap">
-        <div class="p-form-wrap reveal">
-          <p class="kicker">Book a pilot</p>
-          <h2>Put Turf Preview in your <em>estimators’ hands</em>.</h2>
-          <p class="lede">Request a live walkthrough, temporary demo PIN, or custom white-label setup for your installation crew.</p>
-          <form data-lead-form data-product="Turf Preview" data-recipient="kfairley9999@gmail.com" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain">
-            <div class="p-form-grid">
-              <div class="p-field">
-                <label for="tp-name">Name</label>
-                <input id="tp-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
-              </div>
-              <div class="p-field">
-                <label for="tp-company">Company</label>
-                <input id="tp-company" name="company" type="text" autocomplete="organization" placeholder="SoCal Turf & Landscapes">
-              </div>
-              <div class="p-field">
-                <label for="tp-email">Email</label>
-                <input id="tp-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
-              </div>
-              <div class="p-field">
-                <label for="tp-phone">Phone (optional)</label>
-                <input id="tp-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567">
-              </div>
-              <div class="p-field full">
-                <label for="tp-need">What do you need?</label>
-                <textarea id="tp-need" name="need" rows="3" required placeholder="Number of sales reps/estimators, whether you want Turf Preview, Light Preview, or both, and your service area."></textarea>
-              </div>
-            </div>
-            <div class="p-form-actions">
-              <button class="btn primary" type="submit">Request walkthrough</button>
-              <span class="p-form-note">Routes directly to <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a></span>
-            </div>
-            <div class="p-form-status" data-form-status aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer wrap">
-    <p>© <span id="year">2026</span> Kevin Fairley · Los Angeles · <a href="../">Portfolio</a> · <a href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">GitHub</a></p>
-    <p><a href="#top">Back to top ↑</a></p>
-  </footer>
-
-  <script src="../script.js" defer></script>
-  <script src="../assets/lead-form.js" defer></script>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap nav-in">
+<a class="logo" href="./" aria-label="Turf Preview home"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></span><span>Turf Preview</span><small>by Kevin Fairley</small></a>
+<nav class="nav-links" aria-label="Page sections"><a href="#demo">Demo</a><a href="#compare">Before & after</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+<a class="btn btn-primary btn-sm" href="#pilot">Book a walkthrough</a>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap hero-in">
+<span class="eyebrow"><b>Turf</b>Phone-first sales tool · Landscape &amp; turf installers</span>
+<h1>Show the yard <span class="grad">with turf</span> before you quote it.</h1>
+<p class="lede">Snap or upload a customer’s yard photo on site, pick one of five artificial-grass styles, and hand them a photorealistic before/after mockup with your company name and phone number burned into the share image.</p>
+<p class="who"><strong>Built for:</strong> Artificial-grass contractors, landscape sales reps, and estimators closing residential turf jobs.</p>
+<div class="ctas"><a class="btn btn-primary btn-lg" href="#pilot">Book a walkthrough<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a class="btn btn-ghost btn-lg" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Open live app (PIN-gated)<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+<div class="frame" id="demo"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>turf-preview.kfairley9999.workers.dev</span></div><video data-auto muted playsinline controls preload="none" poster="poster.jpg" width="1280" height="720" aria-label="Walkthrough of Turf Preview generating a before/after mockup"><source src="demo.webm" type="video/webm"><source src="demo.mp4" type="video/mp4"></video></div>
+<div class="frame-cap"><span>Interactive before/after walkthrough on a public-domain ranch lawn (Lush Green preset).</span><a href="#pilot">Request demo access ↗</a></div>
+</div>
+<div class="metrics"><div class="wrap"><ul><li><b>5 turf styles</b><span>Lush Green, Natural Olive, Mow Stripes, Emerald, and Putting Green</span></li><li><b>0 photos stored</b><span>Client photos pass directly to Workers AI and are never persisted</span></li><li><b>FLUX.2 Klein</b><span>Runs on Cloudflare Workers AI with automatic 9B → 4B fallback</span></li><li><b>Branded export</b><span>Canvas-drawn before/after image with your shop name &amp; phone from Settings</span></li></ul></div></div>
+</section>
+<section class="sec" id="compare"><div class="wrap"><div class="head rv"><span class="kicker">Before &amp; after</span><h2>From bare or patchy lawn to a before/after slider.</h2><p>Interactive before/after walkthrough on a public-domain ranch lawn (Lush Green preset).</p></div><div class="compare"><figure class="shot rv"><img src="before-sample.jpg" alt="Original ranch house yard photo before turf" loading="lazy" decoding="async"><figcaption>Original yard photo (cropped in-browser to 512px long side before generation).</figcaption></figure>
+<figure class="shot rv"><img src="after-sample.jpg" alt="The same yard rendered with Lush Green artificial turf" loading="lazy" decoding="async"><figcaption>Lush Green output: house, driveway, trees, and daylight stay intact; only turf changes.</figcaption></figure></div></div></section><section class="sec" id="problem"><div class="wrap"><div class="head rv"><span class="kicker">Problem &amp; solution</span><h2>Homeowners struggle to picture synthetic turf on their own house.</h2></div>
+<div class="ps"><article class="ps-card rv"><span class="tag">The problem</span><h3 style="margin-top:14px">Sample squares don’t sell a front yard.</h3><p>Sample turf squares in a truck bed do not show how a full front yard will look against a homeowner’s stucco, driveway, and shade trees—slowing down estimates and follow-up closes.</p></article>
+<article class="ps-card sol rv"><span class="tag">The fix</span><h3 style="margin-top:14px">Their yard, their house, your turf.</h3><p>A zero-framework phone web app crops the photo in the browser, prompts FLUX.2 to replace only lawn and bare dirt while preserving the house and hardscape, and renders an instant slider plus branded Save/Share export.</p></article></div></div></section><section class="sec sec-alt" id="features"><div class="wrap"><div class="head rv"><span class="kicker">Verified capabilities</span><h2>What the code actually does.</h2></div><div class="grid3"><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div><h3>In-browser crop</h3><p>Crops uploads to valid 9:16–16:9 aspect ratios and resizes to 512px max side, then requests a 1024px result at the original aspect ratio.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div><h3>Before/after slider</h3><p>Draws the interactive before/after slider, caption bar, and disclaimer on an HTML canvas.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></div><h3>Branded Save &amp; Share</h3><p>The export image carries your shop name and phone number from Settings.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Access-gated Worker API</h3><p>Constant-time SHA-256 comparison on the <code>x-access-pin</code> header.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg></div><h3>Resilient generation</h3><p>3-attempt retry on transient 3043 errors, then automatic fallback to <code>flux-2-klein-4b</code>.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Privacy by default</h3><p>Strict 3 MB upload limit and zero server-side photo storage.</p></article></div></div></section><section class="sec sec-alt" id="how"><div class="wrap"><div class="head rv"><span class="kicker">How it works</span><h2>Three taps on the driveway.</h2></div><ol class="steps" style="--n:3"><li class="step rv"><h3>Snap the yard</h3><p>Take or upload the customer’s yard photo on your phone. It’s cropped and resized in the browser.</p></li><li class="step rv"><h3>Pick a style</h3><p>Choose Lush Green, Natural Olive, Mow Stripes, Emerald, or Putting Green.</p></li><li class="step rv"><h3>Show &amp; share</h3><p>Slide between before and after, then Save/Share the branded image with the homeowner.</p></li></ol></div></section><section class="sec" id="related"><div class="wrap"><div class="darkcard rv"><span class="kicker" style="color:#bbf7d0">Related</span><h3 style="margin-top:10px">Light Preview</h3><p>Same phone-first Workers AI FLUX.2 pipeline built for holiday lighting dusk mockups. Live at <a href="https://light-preview.kfairley9999.workers.dev" target="_blank" rel="noopener" style="color:#fff">light-preview.kfairley9999.workers.dev ↗</a> (also PIN-gated). Can be white-labeled together with Turf Preview for multi-service crews.</p></div></div></section><section class="sec" id="scope"><div class="wrap"><div class="limits rv"><span class="kicker">Honest scope</span><h2>Important notes</h2><ul><li>Preview only — actual artificial grass installation, drainage, and seam layout may vary.</li><li>The live Cloudflare Worker requires an access PIN to protect the daily Workers AI allowance (10,000 free neurons/day, roughly 7 Best-mode or 100 Saver-mode images).</li><li>Use the form below to request a live walkthrough or custom deployment on your own Cloudflare account.</li></ul></div></div></section><section class="sec sec-alt" id="faq"><div class="wrap"><div class="head center rv"><span class="kicker">FAQ</span><h2>Questions, answered plainly.</h2></div><div class="faq"><details class="rv"><summary>Are my customers’ photos stored?</summary><p>No. Photos pass directly to Workers AI for generation and are never persisted on the server. Uploads are limited to 3 MB.</p></details><details class="rv"><summary>Does it change the house?</summary><p>The prompt asks FLUX.2 to replace only lawn and bare dirt while preserving the house and hardscape. It is a preview; the real install may vary.</p></details><details class="rv"><summary>Why is the live app PIN-gated?</summary><p>To protect the daily free Workers AI allowance. Request a temporary demo PIN with the form.</p></details><details class="rv"><summary>Can it carry my company branding?</summary><p>Yes. The Save/Share image includes your shop name and phone number from Settings, and a custom white-label setup can be deployed on your own Cloudflare account.</p></details></div></div></section>
+<section class="sec cta-sec" id="pilot"><div class="wrap cta-grid">
+<div class="cta-copy rv"><span class="kicker">Book a walkthrough</span><h2>Put Turf Preview in your estimators’ hands.</h2><p>Request a live walkthrough, temporary demo PIN, or custom white-label setup for your installation crew.</p><ol class="next"><li><b>1</b><span>Your email app opens with the details filled in — nothing is stored on this site.</span></li><li><b>2</b><span>Kevin reads it and replies personally.</span></li><li><b>3</b><span>We agree scope in writing before any work starts.</span></li></ol></div>
+<form class="form rv" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain" data-lead-form data-product="Turf Preview" data-recipient="kfairley9999@gmail.com">
+<div class="fgrid">
+<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+<div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization"></div>
+<div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+<div class="field full"><label for="f-need">What do you need?</label><textarea id="f-need" name="need" rows="4" required></textarea></div>
+</div>
+<div class="factions"><button class="btn btn-primary btn-lg" type="submit">Request walkthrough<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button><p class="fnote">Routes directly to <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a> — no third-party form tracker.</p></div>
+<div class="p-form-status" data-form-status role="status" aria-live="polite"></div>
+</form></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="foot-grid">
+<div><a class="logo" href="/" aria-label="Kevin Fairley portfolio"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></span><span>Kevin Fairley</span></a>
+<p class="about">AI researcher and builder in Los Angeles. Every product here is something I built and maintain; the numbers on each page come from the code and its tests.</p></div>
+<div><h2 class="fh">Products</h2><ul><li><a href="/leadflow-mcp/">LeadFlow MCP</a></li><li><a href="/coi-demo-site/">COI Extract</a></li><li><a href="/audit/">Agent &amp; MCP Audit</a></li><li><a href="/turf-preview/" aria-current=page>Turf Preview</a></li><li><a href="/catchpr/">catchpr</a></li><li><a href="/forgepulse/">ForgePulse</a></li><li><a href="/relaycomm/">Relaycomm</a></li></ul></div>
+<div><h2 class="fh">Elsewhere</h2><ul><li><a href="/">Portfolio</a></li><li><a href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Source on GitHub</a></li><li><a href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a></li></ul></div>
+</div><div class="foot-bot"><span>© <span id="year">2026</span> Kevin Fairley · Los Angeles</span><a href="#top">Back to top ↑</a></div></div></footer>
+<div class="mcta"><a class="btn btn-primary" href="#pilot">Book a walkthrough</a></div>
+<script src="../assets/lp.js" defer></script>
 </body>
 </html>

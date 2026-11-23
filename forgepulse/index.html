@@ -1,211 +1,72 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>ForgePulse — PR Triage, Blast Radius &amp; Portable Policy for GitHub</title>
-  <meta name="description" content="A FastAPI and Cloudflare Workers + D1 service sitting next to GitHub: score noisy PRs, compute downstream blast radius, search code owners, record CI failover routing, and enforce YAML policy.">
-  <meta name="theme-color" content="#1c1612" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
-  <meta property="og:title" content="ForgePulse — PR Triage, Blast Radius & Portable Policy">
-  <meta property="og:description" content="TriageGate, GraphSync, CodeAtlas, RunnerMesh, and PolicyVault in durable Cloudflare D1 workspaces.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kfairy9999.github.io/forgepulse/">
-  <meta property="og:image" content="https://kfairy9999.github.io/forgepulse/poster.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ForgePulse — PR Triage, Blast Radius & Portable Policy">
-  <meta name="twitter:description" content="5 modules for AI-PR triage, dependency blast radius, and portable YAML policy. 59 tests, 92% coverage.">
-  <meta name="twitter:image" content="https://kfairy9999.github.io/forgepulse/poster.jpg">
-  <link rel="canonical" href="https://kfairy9999.github.io/forgepulse/">
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="../assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../assets/product.css">
-  <script>
-    (function () {
-      var d = document.documentElement;
-      d.className += ' js';
-      try {
-        var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ForgePulse — PR Triage, Blast Radius &amp; Portable Policy for GitHub</title>
+<meta name="description" content="A FastAPI and Cloudflare Workers + D1 service sitting next to GitHub: score noisy PRs, compute downstream blast radius, search code owners, record CI failover routing, and enforce YAML policy.">
+<link rel="canonical" href="https://kfairy9999.github.io/forgepulse/">
+<meta name="theme-color" content="#09090b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kevin Fairley">
+<meta property="og:title" content="ForgePulse — PR Triage, Blast Radius &amp; Portable Policy">
+<meta property="og:description" content="TriageGate, GraphSync, CodeAtlas, RunnerMesh, and PolicyVault in durable Cloudflare D1 workspaces.">
+<meta property="og:url" content="https://kfairy9999.github.io/forgepulse/">
+<meta property="og:image" content="https://kfairy9999.github.io/forgepulse/poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ForgePulse — PR Triage, Blast Radius &amp; Portable Policy">
+<meta name="twitter:description" content="5 modules for AI-PR triage, dependency blast radius, and portable YAML policy. 59 tests, 92% coverage.">
+<meta name="twitter:image" content="https://kfairy9999.github.io/forgepulse/poster.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="poster.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="../assets/lp.css">
+<style>:root{--accent:#1d4ed8;--accent-2:#06b6d4;--accent-l:#bfdbfe;--accent-soft:#eff6ff}</style>
+<script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="topbar" id="top">
-    <nav class="nav wrap" aria-label="Primary">
-      <a class="brand" href="../">
-        <picture><source srcset="../assets/kevin-fairley-128.webp" type="image/webp"><img class="brand-photo" src="../assets/kevin-fairley-128.jpg" alt="" width="36" height="36" decoding="async"></picture>
-        <span class="brand-name">Kevin Fairley</span>
-      </a>
-      <ul class="nav-links">
-        <li class="hide-sm"><a href="../#work">All Work</a></li>
-        <li><a href="./" aria-current="page">ForgePulse</a></li>
-        <li><a href="#demo">Demo</a></li>
-        <li><a href="#pilot">Book a pilot</a></li>
-      </ul>
-      <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme">
-        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
-        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
-      </button>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="p-hero wrap">
-      <div class="p-hero-inner">
-        <p class="kicker">Engineering Operations · GitHub Webhook Companion</p>
-        <h1>Forge<em>Pulse</em></h1>
-        <p class="lede">Triage noisy or AI-generated pull requests, walk downstream repo blast radius, search code and owners, record CI failover routing decisions, and keep governance in portable YAML/JSON—not locked inside GitHub UI menus.</p>
-        <p class="who"><strong>Built for:</strong> Maintainers and platform teams managing AI-assisted PR volume across multiple repositories.</p>
-        <div class="p-actions">
-          <a class="btn primary" href="#pilot">Book a pilot</a>
-          <a class="btn secondary" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Open live playground ↗</a>
-          <a class="btn ghost" href="https://github.com/kfairy9999/forgepulse" target="_blank" rel="noopener">Source on GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="p-stats">
-        <div class="p-stat"><b>5 modules</b><span>TriageGate, GraphSync, CodeAtlas, RunnerMesh, and PolicyVault</span></div>
-        <div class="p-stat"><b>59 tests · 92%</b><span>Verified test coverage across triage, graph, webhook, and storage paths</span></div>
-        <div class="p-stat"><b>Durable D1 state</b><span>Isolated guest workspaces persist across refreshes on Cloudflare Workers</span></div>
-        <div class="p-stat"><b>1-minute connect</b><span>Wire any GitHub repo via webhook + secret (plus optional encrypted fine-grained PAT)</span></div>
-      </div>
-    </section>
-
-    <section class="section band" id="demo">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <p class="kicker">Walkthrough</p>
-          <h2>Scoring an AI PR, checking blast radius &amp; <em>editing policy</em>.</h2>
-        </header>
-        <div class="p-video-card reveal">
-          <video controls playsinline preload="metadata" poster="poster.jpg">
-            <source src="demo.webm" type="video/webm">
-            <source src="demo.mp4" type="video/mp4">
-          </video>
-          <div class="p-video-cap">
-            <span>Walkthrough of the live guest workspace across TriageGate, GraphSync, CodeAtlas, RunnerMesh, and PolicyVault.</span>
-            <a href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Open your own guest workspace ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <header class="section-head reveal">
-        <p class="kicker">Problem &amp; solution</p>
-        <h2>Keep PR signal and policy <em>portable across repos</em>.</h2>
-      </header>
-      <div class="p-two reveal">
-        <div class="p-box">
-          <h3>The problem</h3>
-          <p>AI-generated PRs spike review load, dependency graphs live in maintainers’ heads, and branch protection rules stay trapped per-repo inside GitHub’s web UI.</p>
-        </div>
-        <div class="p-box">
-          <h3>How ForgePulse solves it</h3>
-          <p>ForgePulse runs as an external HTTP service with per-workspace D1/SQLite state: scoring incoming PRs, recording why a job would fail over, walking dependency blast radius, and validating portable YAML policy.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section band" id="features">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <p class="kicker">Verified capabilities</p>
-          <h2>Five modules in <em>one service</em>.</h2>
-        </header>
-        <div class="p-three reveal">
-          <div class="p-box">
-            <h3>TriageGate &amp; PolicyVault</h3>
-            <ul class="p-list">
-              <li>Scores PRs by contributor history, test presence, diff size, title quality, and AI signals</li>
-              <li>Outputs <code>fast-track</code>, <code>standard-review</code>, <code>quarantine-bot-check</code>, or <code>block-policy</code></li>
-              <li>Portable YAML/JSON rules for protected paths (e.g. <code>auth/</code>, <code>billing/</code>) and line thresholds</li>
-            </ul>
-          </div>
-          <div class="p-box">
-            <h3>GraphSync &amp; CodeAtlas</h3>
-            <ul class="p-list">
-              <li>Breadth-first traversal across repo dependency edges to compute downstream blast radius</li>
-              <li>Cycle-safe traversal that excludes the source repo and persists edits</li>
-              <li>Indexes symbols, paths, code owners, and historical PRs for instant lookup</li>
-            </ul>
-          </div>
-          <div class="p-box">
-            <h3>RunnerMesh &amp; Webhooks</h3>
-            <ul class="p-list">
-              <li>Priority queue with monotonic sequence and failover routing records when hosted runners degrade</li>
-              <li>HMAC-verified GitHub <code>pull_request</code> webhooks per workspace</li>
-              <li>Optional fine-grained PAT encrypted at rest so ForgePulse can fetch changed file lists</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <div class="p-limits reveal">
-        <p class="kicker">Honest scope</p>
-        <h2>Prototype disclosures</h2>
-        <ul>
-          <li>Not a GitHub App yet — connects via repository webhook + secret (and optional fine-grained PAT).</li>
-          <li><strong>RunnerMesh</strong> records routing decisions only and does not launch or dispatch CI runners.</li>
-          <li>Does not write check runs, labels, or comments back to GitHub yet; test presence is marked <code>unknown</code> rather than guessed when no file list is available.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section band" id="pilot">
-      <div class="wrap">
-        <div class="p-form-wrap reveal">
-          <p class="kicker">Book a pilot</p>
-          <h2>Try ForgePulse with your <em>engineering org</em>.</h2>
-          <p class="lede">Open-source MIT and live on Cloudflare Workers. Need help connecting multiple repos or customizing triage rules? Send your setup details below.</p>
-          <form data-lead-form data-product="ForgePulse" data-recipient="kfairley9999@gmail.com" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain">
-            <div class="p-form-grid">
-              <div class="p-field">
-                <label for="fp-name">Name</label>
-                <input id="fp-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
-              </div>
-              <div class="p-field">
-                <label for="fp-company">Company / Org</label>
-                <input id="fp-company" name="company" type="text" autocomplete="organization" placeholder="Acme Platform">
-              </div>
-              <div class="p-field">
-                <label for="fp-email">Email</label>
-                <input id="fp-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
-              </div>
-              <div class="p-field">
-                <label for="fp-phone">Phone (optional)</label>
-                <input id="fp-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567">
-              </div>
-              <div class="p-field full">
-                <label for="fp-need">What do you need?</label>
-                <textarea id="fp-need" name="need" rows="3" required placeholder="Repo count, weekly PR volume, and which modules matter most (TriageGate, GraphSync, PolicyVault)."></textarea>
-              </div>
-            </div>
-            <div class="p-form-actions">
-              <button class="btn primary" type="submit">Request pilot</button>
-              <span class="p-form-note">Routes directly to <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a></span>
-            </div>
-            <div class="p-form-status" data-form-status aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer wrap">
-    <p>© <span id="year">2026</span> Kevin Fairley · Los Angeles · <a href="../">Portfolio</a> · <a href="https://github.com/kfairy9999/forgepulse" target="_blank" rel="noopener">GitHub</a></p>
-    <p><a href="#top">Back to top ↑</a></p>
-  </footer>
-
-  <script src="../script.js" defer></script>
-  <script src="../assets/lead-form.js" defer></script>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap nav-in">
+<a class="logo" href="./" aria-label="ForgePulse home"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><span>ForgePulse</span><small>by Kevin Fairley</small></a>
+<nav class="nav-links" aria-label="Page sections"><a href="#demo">Demo</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+<a class="btn btn-primary btn-sm" href="#pilot">Book a pilot</a>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap hero-in">
+<span class="eyebrow"><b>Eng ops</b>GitHub webhook companion</span>
+<h1>PR triage, blast radius &amp; <span class="grad">portable policy.</span></h1>
+<p class="lede">Triage noisy or AI-generated pull requests, walk downstream repo blast radius, search code and owners, record CI failover routing decisions, and keep governance in portable YAML/JSON—not locked inside GitHub UI menus.</p>
+<p class="who"><strong>Built for:</strong> Maintainers and platform teams managing AI-assisted PR volume across multiple repositories.</p>
+<div class="ctas"><a class="btn btn-primary btn-lg" href="#pilot">Book a pilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a class="btn btn-ghost btn-lg" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Open live playground<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+<div class="frame" id="demo"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>forgepulse.kfairley9999.workers.dev</span></div><video data-auto muted playsinline controls preload="none" poster="poster.jpg" width="1280" height="720" aria-label="Walkthrough of the ForgePulse guest workspace"><source src="demo.webm" type="video/webm"><source src="demo.mp4" type="video/mp4"></video></div>
+<div class="frame-cap"><span>Walkthrough of the live guest workspace across TriageGate, GraphSync, CodeAtlas, RunnerMesh, and PolicyVault.</span><a href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Open your own guest workspace ↗</a></div>
+</div>
+<div class="metrics"><div class="wrap"><ul><li><b>5 modules</b><span>TriageGate, GraphSync, CodeAtlas, RunnerMesh, and PolicyVault</span></li><li><b>59 tests · 92%</b><span>Verified test coverage across triage, graph, webhook, and storage paths</span></li><li><b>Durable D1 state</b><span>Isolated guest workspaces persist across refreshes on Cloudflare Workers</span></li><li><b>1-minute connect</b><span>Wire any GitHub repo via webhook + secret (plus optional encrypted fine-grained PAT)</span></li></ul></div></div>
+</section>
+<section class="sec" id="problem"><div class="wrap"><div class="head rv"><span class="kicker">Problem &amp; solution</span><h2>Keep PR signal and policy portable across repos.</h2></div>
+<div class="ps"><article class="ps-card rv"><span class="tag">The problem</span><h3 style="margin-top:14px">Review load spikes; rules stay trapped.</h3><p>AI-generated PRs spike review load, dependency graphs live in maintainers’ heads, and branch protection rules stay trapped per-repo inside GitHub’s web UI.</p></article>
+<article class="ps-card sol rv"><span class="tag">The fix</span><h3 style="margin-top:14px">One service beside GitHub.</h3><p>ForgePulse runs as an external HTTP service with per-workspace D1/SQLite state: scoring incoming PRs, recording why a job would fail over, walking dependency blast radius, and validating portable YAML policy.</p></article></div></div></section><section class="sec sec-alt" id="features"><div class="wrap"><div class="head rv"><span class="kicker">Verified capabilities</span><h2>Five modules in one service.</h2></div><div class="grid3"><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div><h3>TriageGate</h3><p>Scores PRs by contributor history, test presence, diff size, title quality, and AI signals, and outputs <code>fast-track</code>, <code>standard-review</code>, <code>quarantine-bot-check</code>, or <code>block-policy</code>.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><h3>PolicyVault</h3><p>Portable YAML/JSON rules for protected paths (e.g. <code>auth/</code>, <code>billing/</code>) and line thresholds.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 17M12 11.5l5.5 5.5"/></svg></div><h3>GraphSync</h3><p>Breadth-first, cycle-safe traversal across repo dependency edges to compute downstream blast radius; excludes the source repo and persists edits.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>CodeAtlas</h3><p>Indexes symbols, paths, code owners, and historical PRs for instant lookup.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div><h3>RunnerMesh</h3><p>Priority queue with monotonic sequence and failover routing records when hosted runners degrade.</p></article><article class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Verified webhooks</h3><p>HMAC-verified GitHub <code>pull_request</code> webhooks per workspace; optional fine-grained PAT encrypted at rest to fetch changed file lists.</p></article></div></div></section><section class="sec" id="how"><div class="wrap"><div class="head rv"><span class="kicker">How it works</span><h2>Scoring an AI PR, checking blast radius &amp; editing policy.</h2></div><ol class="steps" style="--n:4"><li class="step rv"><h3>Connect a repo</h3><p>Add a repository webhook and secret — plus an optional encrypted fine-grained PAT for changed file lists.</p></li><li class="step rv"><h3>Score each PR</h3><p>TriageGate sorts incoming pull requests into fast-track, standard review, bot quarantine, or policy block.</p></li><li class="step rv"><h3>See the blast radius</h3><p>GraphSync walks downstream dependencies; CodeAtlas finds owners and past PRs.</p></li><li class="step rv"><h3>Keep policy portable</h3><p>PolicyVault rules live in YAML/JSON you can version and move between repos.</p></li></ol></div></section><section class="sec" id="scope"><div class="wrap"><div class="limits rv"><span class="kicker">Honest scope</span><h2>Prototype disclosures</h2><ul><li>Not a GitHub App yet — connects via repository webhook + secret (and optional fine-grained PAT).</li><li>RunnerMesh records routing decisions only and does not launch or dispatch CI runners.</li><li>Does not write check runs, labels, or comments back to GitHub yet; test presence is marked unknown rather than guessed when no file list is available.</li></ul></div></div></section><section class="sec sec-alt" id="faq"><div class="wrap"><div class="head center rv"><span class="kicker">FAQ</span><h2>Questions, answered plainly.</h2></div><div class="faq"><details class="rv"><summary>Is ForgePulse a GitHub App?</summary><p>Not yet. It connects through a repository webhook and secret, with an optional fine-grained PAT.</p></details><details class="rv"><summary>Will it post comments or labels on our PRs?</summary><p>Not yet. It does not write check runs, labels, or comments back to GitHub.</p></details><details class="rv"><summary>Does RunnerMesh run our CI?</summary><p>No. It records routing decisions only; it does not launch or dispatch runners.</p></details><details class="rv"><summary>Can I try it without connecting a repo?</summary><p>Yes. The live playground gives you an isolated guest workspace that persists across refreshes.</p></details></div></div></section>
+<section class="sec cta-sec" id="pilot"><div class="wrap cta-grid">
+<div class="cta-copy rv"><span class="kicker">Book a pilot</span><h2>Try ForgePulse with your engineering org.</h2><p>Open-source MIT and live on Cloudflare Workers. Need help connecting multiple repos or customizing triage rules? Send your setup details below.</p><ol class="next"><li><b>1</b><span>Your email app opens with the details filled in — nothing is stored on this site.</span></li><li><b>2</b><span>Kevin reads it and replies personally.</span></li><li><b>3</b><span>We agree scope in writing before any work starts.</span></li></ol></div>
+<form class="form rv" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain" data-lead-form data-product="ForgePulse" data-recipient="kfairley9999@gmail.com">
+<div class="fgrid">
+<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+<div class="field"><label for="f-co">Company / Org</label><input id="f-co" name="company" autocomplete="organization"></div>
+<div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+<div class="field full"><label for="f-need">What do you need?</label><textarea id="f-need" name="need" rows="4" required></textarea></div>
+</div>
+<div class="factions"><button class="btn btn-primary btn-lg" type="submit">Request pilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button><p class="fnote">Routes directly to <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a> — no third-party form tracker.</p></div>
+<div class="p-form-status" data-form-status role="status" aria-live="polite"></div>
+</form></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="foot-grid">
+<div><a class="logo" href="/" aria-label="Kevin Fairley portfolio"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><span>Kevin Fairley</span></a>
+<p class="about">AI researcher and builder in Los Angeles. Every product here is something I built and maintain; the numbers on each page come from the code and its tests.</p></div>
+<div><h2 class="fh">Products</h2><ul><li><a href="/leadflow-mcp/">LeadFlow MCP</a></li><li><a href="/coi-demo-site/">COI Extract</a></li><li><a href="/audit/">Agent &amp; MCP Audit</a></li><li><a href="/turf-preview/">Turf Preview</a></li><li><a href="/catchpr/">catchpr</a></li><li><a href="/forgepulse/" aria-current=page>ForgePulse</a></li><li><a href="/relaycomm/">Relaycomm</a></li></ul></div>
+<div><h2 class="fh">Elsewhere</h2><ul><li><a href="/">Portfolio</a></li><li><a href="https://github.com/kfairy9999/forgepulse" target="_blank" rel="noopener">Source on GitHub</a></li><li><a href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a></li></ul></div>
+</div><div class="foot-bot"><span>© <span id="year">2026</span> Kevin Fairley · Los Angeles</span><a href="#top">Back to top ↑</a></div></div></footer>
+<div class="mcta"><a class="btn btn-primary" href="#pilot">Book a pilot</a></div>
+<script src="../assets/lp.js" defer></script>
 </body>
 </html>

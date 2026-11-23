@@ -302,6 +302,17 @@
         </article>
 
         <article class="card reveal">
+          <div class="card-top"><span class="tag">Communications API</span></div>
+          <h3>Relaycomm</h3>
+          <p class="sub">Self-hosted, Twilio-compatible programmable SMS and Voice API</p>
+          <p class="desc">A FastAPI control plane that mirrors Twilio's REST shape: Messages and Calls under <code>/2010-04-01/Accounts/{Sid}</code>, Account SID plus auth token basic auth, <code>SM…</code> / <code>CA…</code> / <code>RE…</code> SIDs, and status callbacks signed with an <code>X-Twilio-Signature</code>-compatible HMAC. A TwiML interpreter runs <code>&lt;Say&gt;</code>, <code>&lt;Play&gt;</code>, <code>&lt;Gather&gt;</code>, <code>&lt;Dial&gt;</code>, <code>&lt;Record&gt;</code>, and <code>&lt;Hangup&gt;</code> against an offline simulator. Pluggable adapters cover SMTP email-to-SMS, a documented Asterisk/FreeSWITCH SIP stub, and optional Telnyx/Vonage passthrough. SQLite storage, a local web console, Docker Compose, and 12 passing pytest tests. It does not deliver to the public telephone network unless you attach a carrier or SIP trunk; that path is not configured.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>TwiML</li><li>Docker</li></ul>
+          <div class="links">
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/relaycomm" target="_blank" rel="noopener">Code<span class="sr"> for Relaycomm</span></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
           <div class="card-top"><span class="tag">ML systems</span></div>
           <h3>fast-tokenizer</h3>
           <p class="sub">Byte-level BPE tokenizer</p>

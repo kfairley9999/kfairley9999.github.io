@@ -120,8 +120,9 @@
             <p class="desc">A GitHub pull-request reviewer that comments only when a generated pytest passes on the base commit and fails on the head, every time it is run, and a one-line command reproduces that result. If it cannot prove a behavior change, it stays silent. Candidates must pass on base 3/3 and fail on head 3/3; flaky tests are dropped, and deterministic assessors filter false positives. A live replay playground walks through recorded cases.</p>
             <ul class="stack" aria-label="Tech stack"><li>Python</li><li>pytest</li><li>GitHub Actions</li><li>Cloudflare Workers</li></ul>
             <div class="links">
-              <a class="btn sm primary" href="https://catchpr.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (catchpr replay playground, opens in a new tab)</span></a>
-              <a class="btn sm secondary" href="https://github.com/kfairy9999/catchpr" target="_blank" rel="noopener">Code<span class="sr"> for catchpr</span></a>
+              <a class="btn sm primary" href="catchpr/">Product page</a>
+              <a class="btn sm secondary" href="https://catchpr.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (catchpr replay playground, opens in a new tab)</span></a>
+              <a class="btn sm ghost" href="https://github.com/kfairy9999/catchpr" target="_blank" rel="noopener">Code<span class="sr"> for catchpr</span></a>
             </div>
           </div>
           <a class="feature-shot" href="https://catchpr.kfairley9999.workers.dev" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
@@ -161,8 +162,9 @@
             <p class="desc">A small HTTP service that sits next to GitHub: it scores noisy or AI-generated pull requests, records CI failover routing, computes downstream blast radius, searches code and owners, and evaluates portable YAML policy. Version 0.2.0 stores isolated guest workspaces in Cloudflare D1, so state survives restarts. A visitor can try the sample org immediately, or connect their own repository with a webhook and an optional fine-grained PAT so changed files can be fetched. Mutating routes require auth and are rate-limited. 59 tests, 92% coverage. It is not a GitHub App yet, and RunnerMesh records routing decisions only &mdash; it does not launch runners.</p>
             <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>TypeScript</li><li>Cloudflare Workers</li><li>D1</li><li>SQLite</li><li>pytest</li></ul>
             <div class="links">
-              <a class="btn sm primary" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (ForgePulse playground, opens in a new tab)</span></a>
-              <a class="btn sm secondary" href="https://github.com/kfairy9999/forgepulse" target="_blank" rel="noopener">Code<span class="sr"> for ForgePulse</span></a>
+              <a class="btn sm primary" href="forgepulse/">Product page</a>
+              <a class="btn sm secondary" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener">Try it live <span aria-hidden="true">↗</span><span class="sr"> (ForgePulse playground, opens in a new tab)</span></a>
+              <a class="btn sm ghost" href="https://github.com/kfairy9999/forgepulse" target="_blank" rel="noopener">Code<span class="sr"> for ForgePulse</span></a>
             </div>
           </div>
           <a class="feature-shot" href="https://forgepulse.kfairley9999.workers.dev" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
@@ -182,6 +184,18 @@
           <div class="links">
             <a class="btn sm primary" href="audit/">View the offer</a>
             <a class="btn sm secondary" href="audit/sample-audit-report.pdf">Sample report (PDF)</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top"><span class="tag">Insurance back-office</span><span class="live">Live demo</span></div>
+          <h3>ACORD 25 COI Extraction</h3>
+          <p class="sub">Certificate-of-insurance extraction with human-in-the-loop review flags</p>
+          <p class="desc">Built for independent insurance agencies and MGAs. Official re-test (corrections off, 22 public certificates): 78.7% overall field accuracy, 95.4% on born-digital PDFs, 61.5% on scans, 27.3% straight-through, 1 silent error in 22. Free 30-day pilot (up to 50 certificates); Starter $299, Growth $599, Scale $999/mo.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Python</li><li>PDF/OCR</li><li>Human review</li><li>GitHub Pages</li></ul>
+          <div class="links">
+            <a class="btn sm primary" href="https://kfairy9999.github.io/coi-demo-site/">Product page &amp; demo</a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/coi-demo-site" target="_blank" rel="noopener">Code<span class="sr"> for COI demo site</span></a>
           </div>
         </article>
 
@@ -309,6 +323,7 @@
           <p class="desc">A FastAPI control plane that mirrors Twilio's REST shape: Messages and Calls under <code>/2010-04-01/Accounts/{Sid}</code>, Account SID plus auth token basic auth, <code>SM…</code> / <code>CA…</code> / <code>RE…</code> SIDs, and status callbacks signed with an <code>X-Twilio-Signature</code>-compatible HMAC. A TwiML interpreter runs <code>&lt;Say&gt;</code>, <code>&lt;Play&gt;</code>, <code>&lt;Gather&gt;</code>, <code>&lt;Dial&gt;</code>, <code>&lt;Record&gt;</code>, and <code>&lt;Hangup&gt;</code> against an offline simulator. Pluggable adapters cover SMTP email-to-SMS, a documented Asterisk/FreeSWITCH SIP stub, and optional Telnyx/Vonage passthrough. SQLite storage, a local web console, Docker Compose, and 12 passing pytest tests. It does not deliver to the public telephone network unless you attach a carrier or SIP trunk; that path is not configured.</p>
           <ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>TwiML</li><li>Docker</li></ul>
           <div class="links">
+            <a class="btn sm primary" href="relaycomm/">Product page</a>
             <a class="btn sm secondary" href="https://github.com/kfairy9999/relaycomm" target="_blank" rel="noopener">Code<span class="sr"> for Relaycomm</span></a>
           </div>
         </article>
@@ -349,8 +364,8 @@
         <h3 class="subhead">More shipped apps</h3>
         <ul class="mini-list">
           <li class="mini">
-            <div class="mini-body"><h4>Turf Preview</h4><p>Phone-first generative-AI app: upload a yard photo, pick a turf style, get a photorealistic install mockup with a before/after slider. Photos are not stored. Generation uses a Qwen Image Edit model on Hugging Face. Live app is access-PIN gated.</p><p class="stack-inline">Python · FastAPI · Qwen Image Edit</p></div>
-            <div class="links"><a class="btn sm secondary" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span><span class="sr"> Turf Preview</span></a><a class="btn sm ghost" href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Code<span class="sr"> for Turf Preview</span></a></div>
+            <div class="mini-body"><h4>Turf Preview</h4><p>Phone-first generative-AI app: upload a yard photo, pick one of 5 turf styles, get a photorealistic install mockup with a before/after slider. Photos are not stored. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>
+            <div class="links"><a class="btn sm primary" href="turf-preview/">Product page</a><a class="btn sm secondary" href="https://turf-preview.kfairley9999.workers.dev" target="_blank" rel="noopener">Live <span aria-hidden="true">↗</span><span class="sr"> Turf Preview</span></a><a class="btn sm ghost" href="https://github.com/kfairy9999/turf-preview" target="_blank" rel="noopener">Code<span class="sr"> for Turf Preview</span></a></div>
           </li>
           <li class="mini">
             <div class="mini-body"><h4>Light Preview</h4><p>Same pipeline for holiday lighting: a dusk mockup of a house with Christmas lights, before/after slider, Save, and Share. Live app is access-PIN gated.</p><p class="stack-inline">JavaScript · Cloudflare Workers AI · FLUX.2</p></div>

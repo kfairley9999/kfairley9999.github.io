@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Relaycomm — Self-Hosted Twilio-Compatible SMS &amp; Voice API</title>
+  <meta name="description" content="Open-source FastAPI control plane mirroring Twilio's REST shape and TwiML voice verbs, with signed HMAC webhooks, offline simulator, SQLite storage, and pluggable carrier adapters.">
+  <meta name="theme-color" content="#1c1612" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="Relaycomm — Self-Hosted Twilio-Compatible SMS & Voice API">
+  <meta property="og:description" content="Develop and self-host Twilio-compatible Messages, Calls, signed webhooks, and TwiML voice workflows against an offline simulator or pluggable adapters.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kfairy9999.github.io/relaycomm/">
+  <meta property="og:image" content="https://kfairy9999.github.io/relaycomm/poster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Relaycomm — Self-Hosted Twilio-Compatible SMS & Voice API">
+  <meta name="twitter:description" content="FastAPI + SQLite + TwiML + X-Twilio-Signature HMAC + Docker Compose.">
+  <meta name="twitter:image" content="https://kfairy9999.github.io/relaycomm/poster.jpg">
+  <link rel="canonical" href="https://kfairy9999.github.io/relaycomm/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../assets/product.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += ' js';
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar" id="top">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="brand" href="../">
+        <picture><source srcset="../assets/kevin-fairley-128.webp" type="image/webp"><img class="brand-photo" src="../assets/kevin-fairley-128.jpg" alt="" width="36" height="36" decoding="async"></picture>
+        <span class="brand-name">Kevin Fairley</span>
+      </a>
+      <ul class="nav-links">
+        <li class="hide-sm"><a href="../#work">All Work</a></li>
+        <li><a href="./" aria-current="page">Relaycomm</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#pilot">Book a pilot</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="p-hero wrap">
+      <div class="p-hero-inner">
+        <p class="kicker">Communications API · Python / FastAPI / TwiML</p>
+        <h1>Relay<em>comm</em></h1>
+        <p class="lede">A self-hosted, open-source programmable SMS and Voice API that mirrors Twilio’s REST shape. Build and test messaging, TwiML voice flows, and signed webhooks locally against an offline simulator, then plug in SMTP, SIP, or a carrier later.</p>
+        <p class="who"><strong>Built for:</strong> Developers and AI-agent builders who want a local or self-hosted Twilio-compatible control plane with zero per-message dev costs.</p>
+        <div class="p-actions">
+          <a class="btn primary" href="#pilot">Book a pilot / setup</a>
+          <a class="btn secondary" href="https://github.com/kfairy9999/relaycomm" target="_blank" rel="noopener">Source &amp; Docker quickstart ↗</a>
+        </div>
+      </div>
+
+      <div class="p-stats">
+        <div class="p-stat"><b>Twilio REST shape</b><span><code>/2010-04-01/Accounts/{AccountSid}</code> with <code>SM…</code>, <code>CA…</code>, <code>RE…</code> SIDs</span></div>
+        <div class="p-stat"><b>Signed webhooks</b><span>HMAC-SHA1 matching <code>X-Twilio-Signature</code> + <code>X-Relaycomm-Signature</code></span></div>
+        <div class="p-stat"><b>4 adapter modes</b><span><code>simulator</code> (default offline), <code>smtp_gateway</code>, <code>sip_stub</code>, and optional passthrough</span></div>
+        <div class="p-stat"><b>12 passing tests</b><span>Verified via pytest across auth, CRUD, TwiML verbs, XXE protection, and adapters</span></div>
+      </div>
+    </section>
+
+    <section class="section band" id="demo">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">Walkthrough</p>
+          <h2>Inside the local <em>web console</em> &amp; TwiML trace view.</h2>
+        </header>
+        <div class="p-video-card reveal">
+          <video controls playsinline preload="metadata" poster="poster.jpg">
+            <source src="demo.webm" type="video/webm">
+            <source src="demo.mp4" type="video/mp4">
+          </video>
+          <div class="p-video-cap">
+            <span>Recorded tour of the Relaycomm web console (Messages, Calls &amp; TwiML, Webhooks, and Simulator &amp; Adapters tabs).</span>
+            <a href="https://github.com/kfairy9999/relaycomm#quickstart-docker-compose" target="_blank" rel="noopener">Run with Docker Compose ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <header class="section-head reveal">
+        <p class="kicker">Problem &amp; solution</p>
+        <h2>Develop and test voice &amp; SMS flows <em>without burning carrier fees</em>.</h2>
+      </header>
+      <div class="p-two reveal">
+        <div class="p-box">
+          <h3>The problem</h3>
+          <p>Testing TwiML menus, <code>&lt;Gather&gt;</code> callbacks, and HMAC webhook verification usually requires live phone numbers, ngrok tunnels, and paid carrier credits on every test run.</p>
+        </div>
+        <div class="p-box">
+          <h3>How Relaycomm solves it</h3>
+          <p>A single FastAPI + SQLite container gives you Basic-Auth REST endpoints, an offline TwiML interpreter with <code>SimulatedDigits</code>, signed callback logs, and a built-in web console.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="features">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">Verified capabilities</p>
+          <h2>What the code <em>actually does</em>.</h2>
+        </header>
+        <div class="p-three reveal">
+          <div class="p-box">
+            <h3>Messages &amp; Calls API</h3>
+            <ul class="p-list">
+              <li><code>POST</code> / <code>GET</code> / <code>DELETE</code> Messages with segment counting and <code>To</code>/<code>From</code> filters</li>
+              <li>Calls + <code>Trace.json</code> + <code>Recordings.json</code></li>
+              <li>Constant-time HTTP Basic Auth with path <code>AccountSid</code> enforcement</li>
+            </ul>
+          </div>
+          <div class="p-box">
+            <h3>Hardened TwiML engine</h3>
+            <ul class="p-list">
+              <li>Parsed with <code>defusedxml</code> (XXE blocked, max redirect depth 10)</li>
+              <li>Supports <code>&lt;Say&gt;</code>, <code>&lt;Play&gt;</code>, <code>&lt;Gather&gt;</code>, <code>&lt;Dial&gt;</code>, <code>&lt;Record&gt;</code>, <code>&lt;Pause&gt;</code>, <code>&lt;Redirect&gt;</code>, <code>&lt;Hangup/&gt;</code></li>
+              <li>Signs status, action, and inbound callbacks in SQLite WAL storage</li>
+            </ul>
+          </div>
+          <div class="p-box">
+            <h3>Adapters &amp; one-command run</h3>
+            <ul class="p-list">
+              <li><code>simulator</code> (100% offline), <code>smtp_gateway</code> (Mailpit or carrier email-to-SMS)</li>
+              <li><code>sip_stub</code> (Asterisk ARI / FreeSWITCH ESL payloads) + optional Telnyx/Vonage passthrough</li>
+              <li>Ships with <code>Dockerfile</code> and <code>docker compose up --build</code></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="p-limits reveal">
+        <p class="kicker">Honest scope</p>
+        <h2>Important limitations</h2>
+        <ul>
+          <li>Relaycomm is an independent open-source MIT project, not a Twilio product.</li>
+          <li>It does not reach real public telephone numbers unless you attach and configure a carrier or SIP trunk; that path is not configured out of the box.</li>
+          <li>No public hosted instance is deployed; run it locally or on your own server via Python 3.11+ or Docker Compose.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section band" id="pilot">
+      <div class="wrap">
+        <div class="p-form-wrap reveal">
+          <p class="kicker">Book a pilot</p>
+          <h2>Integrate or host <em>Relaycomm</em>.</h2>
+          <p class="lede">Free and MIT-licensed on GitHub. Need help wiring a custom SIP trunk, agent telephony workflow, or self-hosted deployment? Tell me what you’re building below.</p>
+          <form data-lead-form data-product="Relaycomm" data-recipient="kfairley9999@gmail.com" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain">
+            <div class="p-form-grid">
+              <div class="p-field">
+                <label for="rc-name">Name</label>
+                <input id="rc-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+              </div>
+              <div class="p-field">
+                <label for="rc-company">Company / Team</label>
+                <input id="rc-company" name="company" type="text" autocomplete="organization" placeholder="Acme Voice">
+              </div>
+              <div class="p-field">
+                <label for="rc-email">Email</label>
+                <input id="rc-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
+              </div>
+              <div class="p-field">
+                <label for="rc-phone">Phone (optional)</label>
+                <input id="rc-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567">
+              </div>
+              <div class="p-field full">
+                <label for="rc-need">What do you need?</label>
+                <textarea id="rc-need" name="need" rows="3" required placeholder="Use case (local SMS/TwiML test harness, SMTP gateway, or SIP trunk integration) and stack."></textarea>
+              </div>
+            </div>
+            <div class="p-form-actions">
+              <button class="btn primary" type="submit">Request setup help</button>
+              <span class="p-form-note">Routes directly to <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a></span>
+            </div>
+            <div class="p-form-status" data-form-status aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <p>© <span id="year">2026</span> Kevin Fairley · Los Angeles · <a href="../">Portfolio</a> · <a href="https://github.com/kfairy9999/relaycomm" target="_blank" rel="noopener">GitHub</a></p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
+
+  <script src="../script.js" defer></script>
+  <script src="../assets/lead-form.js" defer></script>
+</body>
+</html>

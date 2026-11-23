@@ -18,6 +18,7 @@
   <link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="audit.css">
+  <link rel="stylesheet" href="../assets/product.css">
   <script>
     (function () {
       var d = document.documentElement;
@@ -115,6 +116,23 @@
           <p class="when">Append-only traces and a diff that shows where two runs diverged.</p>
           <p>Used in the Deep tier when a staging trace can be recorded or provided. It is a debugger, not a security boundary, and the report will say so.</p>
         </article>
+      </div>
+    </section>
+
+        <section class="section wrap" id="walkthrough" aria-labelledby="walk-title">
+      <header class="section-head reveal">
+        <p class="kicker">Walkthrough</p>
+        <h2 id="walk-title">Audit scope, sample findings &amp; <em>AgentReplay</em> trace diff.</h2>
+      </header>
+      <div class="p-video-card reveal">
+        <video controls playsinline preload="metadata" poster="poster.jpg">
+          <source src="demo.webm" type="video/webm">
+          <source src="demo.mp4" type="video/mp4">
+        </video>
+        <div class="p-video-cap">
+          <span>Tour of the audit tiers, OWASP/NIST mapping, and the AgentReplay timeline viewer used in Deep engagements.</span>
+          <a href="sample-audit-report.pdf" target="_blank" rel="noopener">Open sample PDF ↗</a>
+        </div>
       </div>
     </section>
 
@@ -231,6 +249,35 @@
         <p class="kicker">Book</p>
         <h2 id="book-title">Tell me what you’re <em>shipping</em>.</h2>
         <p class="lede">Send a short note about the agents or MCP servers you want reviewed, and which tier looks right. I’ll reply with a scoping note before any work starts.</p>
+        <form data-lead-form data-product="AI Agent & MCP Security Audit" data-recipient="kfairley9999@gmail.com" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain" style="text-align:left;margin-top:20px;">
+          <div class="p-form-grid">
+            <div class="p-field">
+              <label for="aud-name">Name</label>
+              <input id="aud-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+            </div>
+            <div class="p-field">
+              <label for="aud-company">Company / Team</label>
+              <input id="aud-company" name="company" type="text" autocomplete="organization" placeholder="Acme AI">
+            </div>
+            <div class="p-field">
+              <label for="aud-email">Email</label>
+              <input id="aud-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
+            </div>
+            <div class="p-field">
+              <label for="aud-phone">Phone (optional)</label>
+              <input id="aud-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567">
+            </div>
+            <div class="p-field full">
+              <label for="aud-need">Which tier &amp; what are you shipping?</label>
+              <textarea id="aud-need" name="need" rows="3" required placeholder="Quick Scan ($2,500), Standard ($6,500), or Deep ($12,000) — plus repo or MCP server overview."></textarea>
+            </div>
+          </div>
+          <div class="p-form-actions">
+            <button class="btn primary" type="submit">Request scoping note</button>
+            <span class="p-form-note">Routes directly to kfairley9999@gmail.com</span>
+          </div>
+          <div class="p-form-status" data-form-status aria-live="polite"></div>
+        </form>
         <div class="contact-links">
           <a class="btn primary" href="mailto:kfairley9999@gmail.com?subject=AI%20Agent%20%26%20MCP%20Security%20Audit">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
@@ -249,5 +296,6 @@
   </footer>
 
   <script src="../script.js" defer></script>
+  <script src="../assets/lead-form.js" defer></script>
 </body>
 </html>

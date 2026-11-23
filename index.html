@@ -223,6 +223,17 @@
         </article>
 
         <article class="card reveal">
+          <div class="card-top"><span class="tag">Agent coordination</span></div>
+          <h3>AgentRelay</h3>
+          <p class="sub">Shared task board and email protocol for coordinating AI agents</p>
+          <p class="desc">A file-backed relay so agents can hand off work in a structured JSON envelope that also works in ordinary email. A human approval gate blocks anything from being queued until someone sets the approve flag, and a send ledger refuses duplicate outreach. Stdlib-only Python, 23 tests, no network calls or credentials in the repo.</p>
+          <ul class="stack" aria-label="Tech stack"><li>Python</li><li>unittest</li></ul>
+          <div class="links">
+            <a class="btn sm secondary" href="https://github.com/kfairy9999/agent-relay" target="_blank" rel="noopener">Code<span class="sr"> for AgentRelay</span></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
           <div class="card-top"><span class="tag">Developer tools</span><span class="live">Live demo</span></div>
           <h3>mcp-doctor</h3>
           <p class="sub">Lint, convert, and handshake-test MCP client configs</p>

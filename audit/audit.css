@@ -1,0 +1,80 @@
+/* Styles for /audit only. Tokens and chrome come from the portfolio stylesheet. */
+.hero-audit { padding: 48px 0 12px; }
+.hero-audit-grid { display: block; max-width: 46rem; }
+.hero-audit h1 { font-size: clamp(2.4rem, 6vw, 4.1rem); letter-spacing: -0.03em; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hero-note { margin-top: 16px; color: var(--muted); font-size: 14.5px; max-width: 52ch; }
+
+.stat-row { display: grid; gap: 12px; margin-top: 40px; }
+@media (min-width: 700px) { .stat-row { grid-template-columns: repeat(3, 1fr); } }
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.stat b { display: block; font-family: var(--serif); font-size: 1.35rem; letter-spacing: -0.02em; }
+.stat span { display: block; margin-top: 4px; color: var(--muted); font-size: 14.5px; }
+
+.tier-grid { display: grid; gap: 16px; }
+@media (min-width: 880px) { .tier-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
+.tier {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 24px 22px 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.tier.featured {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow);
+}
+.tier .price {
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  letter-spacing: -0.03em;
+  margin-top: 10px;
+}
+.tier .price small { font-size: 0.95rem; color: var(--muted); font-family: var(--sans); letter-spacing: 0; }
+.tier .when { color: var(--muted); font-size: 14.5px; margin: 6px 0 14px; }
+.tier ul { list-style: none; margin: 0 0 18px; padding: 0; flex: 1; }
+.tier li { position: relative; padding: 6px 0 6px 18px; color: var(--ink-2); font-size: 15px; }
+.tier li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.start-tag {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--amber-soft);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.map-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.map-table th, .map-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.map-table th { color: var(--muted); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.map-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); }
+
+.limits {
+  background: var(--bg-band);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+}
+.limits ul { list-style: none; }
+.limits li { padding: 6px 0 6px 18px; position: relative; color: var(--ink-2); }
+.limits li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+.about-audit {
+  display: grid; gap: 24px; align-items: center;
+}
+@media (min-width: 800px) { .about-audit { grid-template-columns: 120px 1fr; gap: 32px; } }
+.about-audit img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow); }
+
+.nav-links a[aria-current="page"] { color: var(--ink); background: var(--chip); }

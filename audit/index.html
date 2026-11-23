@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AI Agent &amp; MCP Security Audit — Kevin Fairley</title>
+  <meta name="description" content="A productized security review of AI agents and MCP servers, run with tools Kevin Fairley built: MCPSentry, AgentGate, and AgentReplay. Not a certified audit.">
+  <meta name="theme-color" content="#1c1612" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="AI Agent &amp; MCP Security Audit — Kevin Fairley">
+  <meta property="og:description" content="A productized security review of AI agents and MCP servers. Honest scope, mapped to OWASP and NIST AI RMF. Not a certified audit.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kfairy9999.github.io/audit/">
+  <meta property="og:image" content="https://kfairy9999.github.io/assets/kevin-fairley.jpg">
+  <link rel="canonical" href="https://kfairy9999.github.io/audit/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="audit.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += ' js';
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar" id="top">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="brand" href="../">
+        <picture><source srcset="../assets/kevin-fairley-128.webp" type="image/webp"><img class="brand-photo" src="../assets/kevin-fairley-128.jpg" alt="" width="36" height="36" decoding="async"></picture>
+        <span class="brand-name">Kevin Fairley</span>
+      </a>
+      <ul class="nav-links">
+        <li class="hide-sm"><a href="../#work">Work</a></li>
+        <li class="hide-sm"><a href="../#about">About</a></li>
+        <li><a href="./" aria-current="page">Audit</a></li>
+        <li><a href="#book">Book</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero-audit wrap">
+      <div class="hero-audit-grid">
+        <div class="audit-lead">
+          <p class="kicker">Productized review</p>
+          <h1>AI Agent &amp; MCP <em>Security Audit</em></h1>
+          <p class="lede">A time-boxed review of the tools your agents can call — MCP servers, permissions, and the audit trail — run with scanners and a policy layer I built and maintain. Honest scope. No certificates I don’t have, and no guarantee that every issue will be found.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:kfairley9999@gmail.com?subject=AI%20Agent%20%26%20MCP%20Security%20Audit">Book an audit</a>
+            <a class="btn secondary" href="#tiers">See the tiers</a>
+          </div>
+          <p class="hero-note">Booking goes to kfairley9999@gmail.com, the same address as the rest of this site.</p>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>3 tiers</b><span>Quick Scan, Standard, Deep</span></div>
+        <div class="stat"><b>5–20 days</b><span>Turnaround after access</span></div>
+        <div class="stat"><b>OWASP + NIST</b><span>LLM, Agentic, AI RMF</span></div>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="why">
+      <header class="section-head">
+        <p class="kicker">The problem</p>
+        <h2>Agents fail at the <em>tool boundary</em>.</h2>
+        <p class="lede">A model with an over-broad MCP server can write files, call a shell, or talk to another agent with more privilege than anyone intended. Most application scans never look at tool annotations, HTTP MCP posture, or who is allowed to approve a dangerous call.</p>
+      </header>
+      <ul class="chips" aria-label="Risks the audit looks for">
+        <li>Prompt injection &amp; goal hijack</li>
+        <li>Excessive agency</li>
+        <li>Dishonest tool annotations</li>
+        <li>Missing HTTP auth</li>
+        <li>Missing rate limits</li>
+        <li>Unsafe sinks</li>
+        <li>Privilege escalation via delegation</li>
+        <li>Replayable audit trails</li>
+      </ul>
+    </section>
+
+    <section class="section wrap reveal" id="method">
+      <header class="section-head">
+        <p class="kicker">How it’s done</p>
+        <h2>I audit with tools I <em>actually maintain</em>.</h2>
+        <p class="lede">Every engagement is a human review. The tools below produce evidence; they do not replace judgment, and a clean scanner report is not a guarantee of safety.</p>
+      </header>
+      <div class="tier-grid">
+        <article class="tier">
+          <p class="kicker">Scanner</p>
+          <h3>MCPSentry</h3>
+          <p class="when">Static rules MCP001–MCP008, plus an optional live <code>tools/list</code> probe that does not invoke tools.</p>
+          <p>Looks for dishonest annotations, over-broad parameters, unsafe sinks, hardcoded secrets, prompt-injection in descriptions, missing HTTP auth or rate limits, and known npm CVEs.</p>
+        </article>
+        <article class="tier">
+          <p class="kicker">Policy layer</p>
+          <h3>AgentGate</h3>
+          <p class="when">Least-privilege allow-lists, approval hooks, and hash-chained audit logs.</p>
+          <p>Used in Standard and Deep as a policy review — which tools should be allowed, which need a person in the loop, and where identity is being taken from model text (which is not a policy).</p>
+        </article>
+        <article class="tier">
+          <p class="kicker">Trace &amp; replay</p>
+          <h3>AgentReplay</h3>
+          <p class="when">Append-only traces and a diff that shows where two runs diverged.</p>
+          <p>Used in the Deep tier when a staging trace can be recorded or provided. It is a debugger, not a security boundary, and the report will say so.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="tiers">
+      <header class="section-head">
+        <p class="kicker">Pricing</p>
+        <h2>Three tiers, <em>clearly priced</em>.</h2>
+        <p class="lede">List prices in USD. First design partners can still be offered a written discount, agreed in the scoping note before work starts.</p>
+      </header>
+      <div class="tier-grid">
+        <article class="tier">
+          <h3>Quick Scan</h3>
+          <p class="price">$2,500 <small>USD</small></p>
+          <p class="when">5 business days · up to 2 MCP servers</p>
+          <ul>
+            <li>MCPSentry scan and, where safe, a live tools/list probe</li>
+            <li>Tool inventory and annotation review</li>
+            <li>Short written report and a 30-minute readout</li>
+          </ul>
+          <a class="btn sm secondary" href="mailto:kfairley9999@gmail.com?subject=Quick%20Scan%20inquiry">Ask about Quick Scan</a>
+        </article>
+        <article class="tier featured">
+          <span class="start-tag">Most teams start here</span>
+          <h3>Standard</h3>
+          <p class="price">$6,500 <small>USD</small></p>
+          <p class="when">10 business days · up to 5 surfaces</p>
+          <ul>
+            <li>Everything in Quick Scan</li>
+            <li>AgentGate policy review and approval-hook design</li>
+            <li>Mapping to OWASP LLM, OWASP Agentic, and NIST AI RMF</li>
+            <li>Prioritized remediation plan and a 60-minute readout</li>
+          </ul>
+          <a class="btn sm primary" href="mailto:kfairley9999@gmail.com?subject=Standard%20Audit%20inquiry">Ask about Standard</a>
+        </article>
+        <article class="tier">
+          <h3>Deep</h3>
+          <p class="price">$12,000 <small>USD</small></p>
+          <p class="when">15–20 business days · agreed inventory</p>
+          <ul>
+            <li>Everything in Standard, plus a short threat model</li>
+            <li>Policy draft and a replay of one recorded staging run</li>
+            <li>Retest of agreed fixes within 15 business days</li>
+          </ul>
+          <a class="btn sm secondary" href="mailto:kfairley9999@gmail.com?subject=Deep%20Audit%20inquiry">Ask about Deep</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="mapping">
+      <header class="section-head">
+        <p class="kicker">Frameworks</p>
+        <h2>Mapped to OWASP and <em>NIST AI RMF</em>.</h2>
+        <p class="lede">The report will say “not assessed” when a category was out of depth for the chosen tier. That is deliberate.</p>
+      </header>
+      <div class="map-wrap">
+        <table class="map-table">
+          <thead>
+            <tr><th>Area</th><th>What I look at</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>OWASP LLM 2026</td><td>Prompt injection, sensitive data, excessive agency, supply-chain CVEs (npm / OSV), unbounded consumption, and related entries as evidence allows.</td></tr>
+            <tr><td>OWASP Agentic 2026</td><td>Goal hijack, tool misuse, privilege abuse, unexpected code execution, memory poisoning, and inter-agent delegation.</td></tr>
+            <tr><td>NIST AI RMF</td><td>Map the system boundary and intended use; Measure the controls with evidence; recommend Govern / Manage next steps. I do not operate your governance program, and this is not a certification.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="sample">
+      <header class="section-head">
+        <p class="kicker">Sample</p>
+        <h2>A real scan, <em>honestly written</em>.</h2>
+        <p class="lede">The sample report runs MCPSentry against official open-source MCP reference servers (Filesystem and Memory) and then a human reviews every finding. One high-severity sink flag was downgraded because the handler already validates paths. Another auth flag was missing because a comment tripped the heuristic. That human pass is part of the product. It is an illustrative sample, not a client engagement and not a claim about every deployment of those servers.</p>
+        <div class="hero-actions">
+          <a class="btn sm primary" href="sample-audit-report.pdf">Read the sample report (PDF)</a>
+        </div>
+      </header>
+    </section>
+
+    <section class="section wrap reveal" id="limits">
+      <div class="limits">
+        <p class="kicker">Honest limits</p>
+        <h2>What this audit is <em>not</em>.</h2>
+        <ul>
+          <li>Not a SOC 2, ISO 27001, CMMC, FedRAMP, or EU AI Act certification — I don’t have those.</li>
+          <li>Not a guarantee that every issue will be found. Static analysis is heuristic, not a formal proof.</li>
+          <li>Not a claim that fixture scores from my test corpus apply to every server you run.</li>
+          <li>AgentGate only constrains calls that go through it, and its included red-team suite has two documented residual misses.</li>
+          <li>I don’t invoke destructive tools, and I don’t publish client findings without written approval.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="about">
+      <div class="about-audit">
+        <picture>
+          <source srcset="../assets/kevin-fairley.webp" type="image/webp">
+          <img src="../assets/kevin-fairley.jpg" width="120" height="120" alt="Kevin Fairley">
+        </picture>
+        <div>
+          <p class="kicker">The reviewer</p>
+          <h2>Built by Kevin Fairley.</h2>
+          <p class="lede">I’m an AI researcher and builder in Los Angeles, focused on making LLM agents measurable and dependable. I write the scanner, the permission layer, and the replay log used in this audit, and I do the review myself. If you want to see the rest of the work, it’s on my portfolio and on GitHub.</p>
+          <div class="hero-actions">
+            <a class="btn sm secondary" href="../">Portfolio</a>
+            <a class="btn sm secondary" href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="book" aria-labelledby="book-title">
+      <div class="contact-card reveal">
+        <p class="kicker">Book</p>
+        <h2 id="book-title">Tell me what you’re <em>shipping</em>.</h2>
+        <p class="lede">Send a short note about the agents or MCP servers you want reviewed, and which tier looks right. I’ll reply with a scoping note before any work starts.</p>
+        <div class="contact-links">
+          <a class="btn primary" href="mailto:kfairley9999@gmail.com?subject=AI%20Agent%20%26%20MCP%20Security%20Audit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+            kfairley9999@gmail.com
+          </a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/kevin-fairley-94330b42a/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <p>© <span id="year">2026</span> Kevin Fairley · Los Angeles, CA</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

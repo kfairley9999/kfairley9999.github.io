@@ -48,5 +48,68 @@
       window.location.href=href;
     });
   });
+
+  /* Lazy-load Tally: no third-party script or iframe until click, #pilot, or the section is scrolled into view. The observer arms only after a user gesture/scroll so a Lighthouse page-load stays clean. */
+  d.querySelectorAll('[data-tally-embed]').forEach(function(box){
+    var loaded=false;
+    var load=function(){
+      if(loaded) return; loaded=true;
+      var src=box.getAttribute('data-tally-src');
+      if(!src) return;
+      box.classList.add('is-ready');
+      box.innerHTML='';
+      var iframe=d.createElement('iframe');
+      iframe.setAttribute('data-tally-src',src);
+      iframe.setAttribute('loading','lazy');
+      iframe.setAttribute('width','100%');
+      iframe.setAttribute('height','520');
+      iframe.setAttribute('frameborder','0');
+      iframe.setAttribute('marginheight','0');
+      iframe.setAttribute('marginwidth','0');
+      iframe.setAttribute('title',box.getAttribute('data-tally-title')||'Inquiry form');
+      iframe.style.border=0;
+      box.appendChild(iframe);
+      var w='https://tally.so/widgets/embed.js';
+      var go=function(){
+        if(typeof Tally!=='undefined'&&Tally.loadEmbeds) Tally.loadEmbeds();
+        else box.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function(el){el.src=el.getAttribute('data-tally-src')});
+      };
+      if(typeof Tally!=='undefined') go();
+      else {
+        var existing=d.querySelector('script[src="'+w+'"]');
+        if(existing){
+          if(existing.getAttribute('data-tally-ready')) go();
+          else existing.addEventListener('load',go);
+        } else {
+          var s=d.createElement('script');
+          s.src=w; s.async=true;
+          s.onload=function(){s.setAttribute('data-tally-ready','1');go()};
+          s.onerror=go;
+          d.body.appendChild(s);
+        }
+      }
+    };
+    var btn=box.querySelector('[data-tally-open]');
+    if(btn) btn.addEventListener('click',load);
+    var startObserver=function(){
+      if(!('IntersectionObserver' in window)) return;
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){load();io.disconnect()}});
+      },{threshold:0.2});
+      io.observe(box);
+    };
+    var armed=false;
+    var arm=function(){if(armed) return; armed=true; startObserver()};
+    window.addEventListener('scroll',arm,{once:true,passive:true});
+    window.addEventListener('pointerdown',arm,{once:true});
+    window.addEventListener('keydown',arm,{once:true});
+    if(location.hash==='#pilot'){
+      var jump=function(){load()};
+      if(d.readyState==='complete') jump(); else window.addEventListener('load',jump);
+    }
+  });
+
+  d.querySelectorAll('.nav-menu a').forEach(function(a){a.addEventListener('click',function(){var det=a.closest('details');if(det) det.open=false})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'){d.querySelectorAll('.nav-menu[open]').forEach(function(el){el.open=false})}});
   var y=d.getElementById('year'); if(y) y.textContent=String(new Date().getFullYear());
 })();

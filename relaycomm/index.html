@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Relaycomm — Self-Hosted Twilio-Compatible SMS &amp; Voice API</title>
 <meta name="description" content="Open-source FastAPI control plane mirroring Twilio&#x27;s REST shape and TwiML voice verbs, with signed HMAC webhooks, offline simulator, SQLite storage, and pluggable carrier adapters.">
-<link rel="canonical" href="https://kfairy9999.github.io/relaycomm/">
+<link rel="canonical" href="https://kfairley9999.github.io/relaycomm/">
 <meta name="theme-color" content="#09090b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kevin Fairley">
 <meta property="og:title" content="Relaycomm — Self-Hosted Twilio-Compatible SMS &amp; Voice API">
 <meta property="og:description" content="Develop and self-host Twilio-compatible Messages, Calls, signed webhooks, and TwiML voice workflows against an offline simulator or pluggable adapters.">
-<meta property="og:url" content="https://kfairy9999.github.io/relaycomm/">
-<meta property="og:image" content="https://kfairy9999.github.io/relaycomm/poster.jpg">
+<meta property="og:url" content="https://kfairley9999.github.io/relaycomm/">
+<meta property="og:image" content="https://kfairley9999.github.io/relaycomm/poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Relaycomm — Self-Hosted Twilio-Compatible SMS &amp; Voice API">
 <meta name="twitter:description" content="FastAPI + SQLite + TwiML + X-Twilio-Signature HMAC + Docker Compose.">
-<meta name="twitter:image" content="https://kfairy9999.github.io/relaycomm/poster.jpg">
+<meta name="twitter:image" content="https://kfairley9999.github.io/relaycomm/poster.jpg">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="poster.jpg" as="image" fetchpriority="high">
@@ -37,9 +37,9 @@
 <h1>A self-hosted, <span class="grad">Twilio-compatible</span> SMS &amp; Voice API.</h1>
 <p class="lede">A self-hosted, open-source programmable SMS and Voice API that mirrors Twilio’s REST shape. Build and test messaging, TwiML voice flows, and signed webhooks locally against an offline simulator, then plug in SMTP, SIP, or a carrier later.</p>
 <p class="who"><strong>Built for:</strong> Developers and AI-agent builders who want a local or self-hosted Twilio-compatible control plane with zero per-message dev costs.</p>
-<div class="ctas"><a class="btn btn-primary btn-lg" href="#pilot">Get setup help<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a class="btn btn-ghost btn-lg" href="https://github.com/kfairy9999/relaycomm" target="_blank" rel="noopener">Source &amp; Docker quickstart<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+<div class="ctas"><a class="btn btn-primary btn-lg" href="#pilot">Get setup help<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a class="btn btn-ghost btn-lg" href="https://github.com/kfairley9999/relaycomm" target="_blank" rel="noopener">Source &amp; Docker quickstart<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
 <div class="frame" id="demo"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost — Relaycomm web console</span></div><video data-auto muted playsinline controls preload="none" poster="poster.jpg" width="1280" height="720" aria-label="Tour of the Relaycomm web console"><source src="demo.webm" type="video/webm"><source src="demo.mp4" type="video/mp4"></video></div>
-<div class="frame-cap"><span>Recorded tour of the Relaycomm web console (Messages, Calls &amp; TwiML, Webhooks, and Simulator &amp; Adapters tabs).</span><a href="https://github.com/kfairy9999/relaycomm#quickstart-docker-compose" target="_blank" rel="noopener">Run with Docker Compose ↗</a></div>
+<div class="frame-cap"><span>Recorded tour of the Relaycomm web console (Messages, Calls &amp; TwiML, Webhooks, and Simulator &amp; Adapters tabs).</span><a href="https://github.com/kfairley9999/relaycomm#quickstart-docker-compose" target="_blank" rel="noopener">Run with Docker Compose ↗</a></div>
 </div>
 <div class="metrics"><div class="wrap"><ul><li><b>Twilio REST shape</b><span>/2010-04-01/Accounts/{AccountSid} with SM…, CA…, RE… SIDs</span></li><li><b>Signed webhooks</b><span>HMAC-SHA1 matching X-Twilio-Signature + X-Relaycomm-Signature</span></li><li><b>4 adapter modes</b><span>simulator (default offline), smtp_gateway, sip_stub, and optional passthrough</span></li><li><b>12 passing tests</b><span>Verified via pytest across auth, CRUD, TwiML verbs, XXE protection, and adapters</span></li></ul></div></div>
 </section>
@@ -60,7 +60,7 @@
 <div><a class="logo" href="/" aria-label="Kevin Fairley portfolio"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.5M7.8 16.2a6 6 0 0 1 0-8.5M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"/></svg></span><span>Kevin Fairley</span></a>
 <p class="about">AI researcher and builder in Los Angeles. Every product here is something I built and maintain; the numbers on each page come from the code and its tests.</p></div>
 <div><h2 class="fh">Products</h2><ul><li><a href="/leadflow-mcp/">LeadFlow MCP</a></li><li><a href="/coi-demo-site/">COI Extract</a></li><li><a href="/audit/">Agent &amp; MCP Audit</a></li><li><a href="/turf-preview/">Turf Preview</a></li><li><a href="/catchpr/">catchpr</a></li><li><a href="/forgepulse/">ForgePulse</a></li><li><a href="/relaycomm/" aria-current=page>Relaycomm</a></li></ul></div>
-<div><h2 class="fh">Elsewhere</h2><ul><li><a href="/">Portfolio</a></li><li><a href="https://github.com/kfairy9999/relaycomm" target="_blank" rel="noopener">Source &amp; Docker quickstart</a></li><li><a href="https://github.com/kfairy9999" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a></li></ul></div>
+<div><h2 class="fh">Elsewhere</h2><ul><li><a href="/">Portfolio</a></li><li><a href="https://github.com/kfairley9999/relaycomm" target="_blank" rel="noopener">Source &amp; Docker quickstart</a></li><li><a href="https://github.com/kfairley9999" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a></li></ul></div>
 </div><div class="foot-bot"><span>© <span id="year">2026</span> Kevin Fairley · Los Angeles</span><a href="#top">Back to top ↑</a></div></div></footer>
 <div class="mcta"><a class="btn btn-primary" href="#pilot">Get setup help</a></div>
 <script src="../assets/lp.js" defer></script>

@@ -1,8 +1,8 @@
-# kfairy9999.github.io
+# kfairley9999.github.io
 
 Personal portfolio of **Kevin Fairley**, AI Researcher (Agentic Systems, Evaluation & Reliability).
 
-**Live:** https://kfairy9999.github.io
+**Live:** https://kfairley9999.github.io
 
 <p>
   <img src="docs/screenshot-mobile.png" alt="Portfolio on a phone (dark theme)" width="260">
@@ -57,4 +57,4 @@ Edit `index.html`, commit, and push to `main`. GitHub Pages redeploys in about a
 
 ## Contact
 
-[LinkedIn](https://www.linkedin.com/in/kevin-fairley-94330b42a/) · [GitHub](https://github.com/kfairy9999) · kfairley9999@gmail.com
+[LinkedIn](https://www.linkedin.com/in/kevin-fairley-94330b42a/) · [GitHub](https://github.com/kfairley9999) · kfairley9999@gmail.com
